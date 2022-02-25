@@ -1,0 +1,203 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .layout-guide {
+            border: 1px solid #aaa;
+        }
+        
+        .layout-guide strong {
+            display: inline-block;
+            margin: 15px;
+        }
+        
+        .layout-guide strong+div {
+            margin-top: 0;
+        }
+        
+        .layout-guide .layout-justify {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .layout-guide .layout-justify>div {
+            flex: 1
+        }
+        
+        .layout-guide div {
+            background-color: #f9f9f9
+        }
+        /* .layout-guide div strong {
+            color: #666;
+        } */
+        
+        .layout-guide div div {
+            background-color: #ebebeb
+        }
+        
+        .layout-guide div div div {
+            background-color: #ddd;
+        }
+        /* .layout-guide div div strong {
+            color: #999;
+        } */
+        
+        .layout-guide div {
+            border: 1px solid #ccc;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>서브가이드</h2>
+                        <section>
+                            <ul class="scr">
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="layout-guide">
+                                    <strong>body</strong>
+                                    <div class="block">
+                                        <strong>data-role=wrap</strong>
+                                        <div class="block">
+                                            <strong style="color:var(--emp-st)">data-role="page"</strong>
+                                            <div class="block">
+                                                <strong>data-role="header" data-position="top"</strong>
+                                            </div>
+                                            <div class="block layout-justify" style="background-color: #fff;">
+                                                <div class="block" style="flex: 0 1 auto; width:20%; height:300px">
+                                                    <strong>data-role=snb</strong>
+                                                </div>
+                                                <div>
+                                                    <strong>data-role="content" id="content"</strong>
+                                                </div>
+                                            </div>
+                                            <div class="block">
+                                                <strong>data-role="footer" data-position="bottom"</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block">
+                                        <strong style="color:var(--emp-nd)">data-role="modal"</strong>
+                                    </div>
+                                </div>
+
+                                <style>
+                                    .gallery {
+                                        display: grid;
+                                        grid-template-columns: repeat(3, 32.8%);
+                                        grid-auto-rows: minmax(100px, auto);
+                                        grid-column-gap: 0.3%;
+                                        grid-row-gap: 0.2%;
+                                        justify-items: stretch;
+                                        padding-bottom: 1%;
+                                    }
+                                    
+                                    .gallery>div {
+                                        margin: 5px;
+                                        border: 1px solid #ccc;
+                                        border-radius: 10px;
+                                    }
+                                    
+                                    .gallery>div>img {
+                                        width: 100%;
+                                        /* Resize images */
+                                        height: 100%;
+                                    }
+                                    
+                                    .gallery>.big {
+                                        grid-column: 1/3;
+                                        grid-row: 1/3;
+                                    }
+                                    
+                                    .gallery>.double-row {
+                                        grid-column: 3;
+                                        grid-row: 1/3;
+                                    }
+                                    
+                                    .gallery>.double-column {
+                                        grid-column: 1/3;
+                                    }
+                                    /* Optional Option */
+                                    /* Other Column Double Row */
+                                    /*
+
+                                    .gallery > .double-row-two {
+                                        grid-column: 2;
+                                        grid-row: 1/3;
+                                    }
+
+                                    .gallery > .double-row-one {
+                                        grid-column: 1;
+                                        grid-row: 1/3;
+                                    }
+
+                                    */
+                                </style>
+                                <!-- <div class="gallery">
+                                    <div class="double-column">
+                                        a
+                                    </div>
+                                    <div class="double-row">
+                                        b
+                                    </div>
+                                    <div>
+                                        c<br>c<br>c<br>c<br>c<br>c<br>c<br>c<br>c<br>c<br>
+                                    </div>
+                                    <div>
+                                        d
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    ...
+                                </pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(1, 1);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

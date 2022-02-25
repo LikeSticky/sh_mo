@@ -1,0 +1,59 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>사용자 만족도 향상</h2>
+                        <section>
+                            <p class="scr">이미지를 게시할 때 최고의 사용자 만족도를 이끌어 낼 수 있는 방법모색</p>
+                            <ul class="scr">
+                                <li>웹서비스에 불필요한 메타정보를 제거(<a href="optimization_image.html">이미지 최적화 부분 참조</a>)</li>
+                                <li>색상정보가 많은 이미지는 png, jpg로 서비스 하며, 기본적으로 압축을 사용하지 않는다.</li>
+                                <li>svg는 태그로 사용보다는 url encoder배경이미지로 사용 <a href="../url-encoder/index.html" target="_blank">url변환</a></li>
+                            </ul>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(0, 4);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

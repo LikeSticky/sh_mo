@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/contents.css">
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/ui.js"></script>
+    <style>
+        .label {
+            font-weight: bold;
+            /* 글자를 진하게 */
+            font-size: 12pt;
+            margin: 20px 0;
+            /* 바깥 위아래 여백을 20px 준다. */
+        }
+        
+        .button {
+            width: 200px;
+            border: 1px solid #CCCCCC;
+            /* 테두리를 1px크기의 실선으로 #CCCCCC 색깔로 입힌다. */
+            background-color: #EEEEEE;
+            /* 배경색 */
+            padding: 2px;
+            margin: 10px 0;
+        }
+        
+        .speech {
+            font-size: 1em;
+        }
+        
+        .aa {
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+
+            $("div.button").click(function() {
+                var $speech = $("div.speech");
+                var currentSize = $speech.css("fontSize");
+                var num = parseInt(currentSize, 10); /* parseFloat()은 숫자가 아니면 숫자가 아니라는 뜻의 NaN을 반환한다. */
+                var unit = currentSize.slice(-2); /* 끝에서부터 두자리의 문자를 가져온다. */
+
+                if (this.id == "switcher-large") {
+                    num += 1.1; /* num = num * 1.4 와 동일하다. */
+                } else if (this.id == "switcher-small") {
+                    num -= 1.1; /* num = num / 1.4 와 동일하다. */
+                } else {
+                    num = 14;
+                }
+
+                $speech.css("fontSize", num + unit);
+
+                console.log(num, unit);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name='tel' id='tel' placeholder="연락 받을 전화번호" rel='연락 받을 전화번호' required />
+    <div id="switcher">
+        <div class="label">스타일 변환기</div>
+        <div class="button" id="switcher-large">텍스트 사이즈 늘리기(+)</div>
+        <div class="button" id="switcher-small">텍스트 사이즈 줄이기(-)</div>
+        <div class="button" id="switcher-ini">텍스트 사이즈 줄이기(0)</div>
+    </div>
+
+    <div class="speech">
+        <p>
+            지금으로부터 87년 전 우리의 선조들은 이 대륙에서 자유 속에 잉태되고 만인은 모두 평등하게 창조되었다는 명제에 봉헌된 한 새로운 나라를 탄생시켰습니다.
+        </p>
+        <p class="aa">20px
+            <span style="font-size:14px;">14px</span>
+            <span style="font-size:24px;">24px</span>
+        </p>
+    </div>
+</body>
+
+</html>

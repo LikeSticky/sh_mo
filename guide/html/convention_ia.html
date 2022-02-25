@@ -1,0 +1,324 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../../guide/plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../../guide/plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        table {
+            font-size: 12px;
+            border-top: 1px solid #999;
+            width: 100%;
+        }
+        
+        table thead th {
+            border-bottom: 1px solid #999;
+            padding: 10px 0;
+            background-color: #dfdfdf;
+            vertical-align: middle;
+        }
+        
+        table tbody th {
+            font-weight: normal;
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+        
+        table tbody td {
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            padding: 5px 10px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        
+        table tbody td:first-child {
+            text-align: center;
+        }
+        
+        table tbody td.tl {
+            text-align: left;
+        }
+        
+        table tbody td .b-small {
+            display: block;
+            margin-top: 3px;
+            font-size: 11px;
+            color: #aaa;
+        }
+        
+        .contents .s-tit1 {
+            font-size: 1em;
+            padding: 30px 0 10px;
+            text-decoration: underline;
+        }
+        
+        .contents article div.scr {
+            margin-top: 30px;
+        }
+        
+        .contents article div.scr:first-child {
+            margin-top: 0;
+        }
+        
+        .count {
+            width: 100%;
+            border: 1px solid #2b333d;
+            background: #47505a;
+            font-size: 12px;
+            display: table;
+        }
+        
+        .count a {
+            color: #ccc;
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .count a.selected {
+            color: #0fC3ff;
+        }
+        
+        .link-pass td {
+            background-color: #ccc;
+        }
+        
+        .link.red a {
+            color: red;
+            text-decoration: underline;
+        }
+        
+        .del {
+            color: #ccc !important;
+            text-decoration: line-through;
+        }
+        
+        .del a {
+            color: #ccc !important;
+        }
+        
+        table tr {
+            background-color: #ddd;
+        }
+        
+        .type-smart table td>span.sepe {
+            position: absolute;
+            margin: 0 0 0 5px;
+        }
+        
+        .mobile-frame {
+            position: fixed;
+            right: -402px;
+            top: 0;
+            z-index: 1000;
+            width: 396px;
+            height: 667px;
+            border: 3px solid #a8a8a8;
+            background: #fff;
+            transition: all .5s ease;
+            border-radius: 5px;
+            transition-duration: 0.3s;
+        }
+        
+        .mobile-frame.on {
+            right: 0;
+            transition-duration: 0.3s;
+        }
+        
+        .mobile-frame iframe {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .mobile-frame .frame_close {
+            position: absolute;
+            left: -34px;
+            top: 50%;
+            margin-top: -30px;
+            display: block;
+            width: 30px;
+            height: 60px;
+            background: #f5f5f5;
+            border: 1px solid #a8a8a8;
+            border-radius: 15px 0 0 15px;
+            font-size: 0;
+            color: transparent;
+            cursor: pointer;
+        }
+        
+        .mobile-frame .frame_close:after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 19px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M17,19V5H7V19H17M17,1A2,2 0 0,1 19,3V21A2,2 0 0,1 17,23H7C5.89,23 5,22.1 5,21V3C5,1.89 5.89,1 7,1H17M9,7H15V9H9V7M9,11H13V13H9V11Z' /%3E%3C/svg%3E");
+            display: block;
+            width: 24px;
+            height: 24px;
+            /* transition: all 1s ease; */
+        }
+        
+        .mobile-frame.on .frame_close:after {
+            width: 24px;
+            height: 24px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z' /%3E%3C/svg%3E");
+        }
+        
+        .mod {
+            font-size: 12px;
+            background: #91ab44;
+            padding: 3px 9px 2px;
+            border-radius: 11px;
+            color: #fff;
+            display: inline-block;
+            border-radius: 11px;
+            margin: 2px 0;
+        }
+        
+        .new {
+            font-size: 12px;
+            background: #4488ab;
+            padding: 3px 9px 2px;
+            border-radius: 11px;
+            color: #fff;
+            display: inline-block;
+            border-radius: 11px;
+            margin: 2px 0;
+        }
+        
+        .converter {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .converter>* {
+            color: #91ab44;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h2 class="tit"></h2>
+                <section>
+                    <article>
+                        <h2>Information Architecture</h2>
+                        <div class="as-tab">
+                            <ul class="ia-tab area-tab-mnu flexible">
+                                <li><a href="#" class="shot">메뉴1</a></li>
+                                <li><a href="#">메뉴2</a></li>
+                                <li><a href="#">메뉴3</a></li>
+                                <li><a href="#">메뉴4</a></li>
+                                <li><a href="#">메뉴5</a></li>
+                                <li><a href="#">메뉴6</a></li>
+                                <li><a href="#">메뉴7</a></li>
+                                <li><a href="#">메뉴8</a></li>
+                                <li><a href="#">메뉴9</a></li>
+                                <li><a href="#">메뉴10</a></li>
+                            </ul>
+                            <div class="tab-inner area-tab-cont">
+                                <span style="float:left; margin-top:15px;">
+									수정파일 <span class="mod" style="vertical-align:middle; margin-top:-2px;">MM-DD</span> 신규파일 <span class="new" style="vertical-align:middle; margin-top:-2px;">MM-DD</span>
+                                </span>
+                                <!--  -->
+                                <div class="frt_tbl01 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl02 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl03 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl04 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl05 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl06 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl07 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl08 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl09 frt_tbl tab-ele">
+                                </div>
+
+                                <!--  -->
+                                <div class="frt_tbl10 frt_tbl tab-ele">
+                                </div>
+                                <div class="mobile-frame">
+                                    <iframe src="" frameborder="0" id="mFrame"></iframe>
+                                    <span class="frame_close">닫기</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="noti-box">
+        <div class="box-cont">
+            <h3>Pub. reporting</h3>
+            <ul>
+                <li>
+                    <p class="emp-box"><strike>$('a[href^="#"]').not(".able-anchor").click(function(e){e.preventDefault();});</strike></p>
+                </li>
+                <li>input 타입에서 숫자(type="tel")와 이메일(type="email")을 적용</li>
+                <li>영역터치시 포커스의 범위를 위해 인풋요소는 되도록이면 for/id연결로 하고, 셀렉트는 title로 적용</li>
+            </ul>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all()
+        $(function() {
+            navMenu(0, 5);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

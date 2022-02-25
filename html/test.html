@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/contents.css">
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/ui.js"></script>
+    <style>
+        /* GNB */
+        
+        .gnb-wrap {
+            margin: 0 auto;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .gnb-ext .inner-box {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gnb-ext .inner-box ul {
+            margin-top: 18px;
+        }
+        
+        .gnb-ext .inner-box ul:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .gnb-ext .inner-box li {
+            float: left;
+            margin-left: 10px;
+        }
+        
+        .gnb-ext .inner-box li a {
+            padding: 10px;
+        }
+        
+        .gnb-ext .inner-box li a:hover {
+            color: #6c8a10;
+            font-weight: 300;
+            text-decoration: none;
+        }
+        
+        .gnb-ext .inner-box li.active a {
+            color: #6c8a10;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .gnb {
+            width: 800px;
+            margin: 7px auto 0;
+            float: left;
+        }
+        
+        .gnb>ul:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .gnb>ul>li {
+            float: left;
+            margin-left: 20px;
+        }
+        
+        .gnb>ul>li>a {
+            position: relative;
+            display: inline-block;
+            padding: 20px 25px;
+            height: 35px;
+            line-height: 36px;
+            color: #000;
+            font-size: 16px;
+            white-space: nowrap;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        
+        .gnb>ul>li .gnb-ext {
+            display: none;
+            position: absolute;
+            top: 90px;
+            left: -20px;
+            width: calc(100% + 40px);
+            box-shadow: 0px 20px 30px -15px rgba(0, 0, 0, 0.3);
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #dbdbdb;
+            overflow: hidden;
+            min-height: 56px;
+        }
+        
+        .gnb>ul>li.on .gnb-ext {
+            display: block;
+            z-index: 8888;
+            border-top: 1px solid #dbdbdb;
+        }
+        
+        .gnb>ul>li.active>a {
+            text-decoration: none;
+            letter-spacing: -1px;
+            color: #6c8a10;
+            font-weight: 700;
+        }
+        
+        .gnb>ul>li.active:hover>a:after {
+            content: "";
+            background-color: transparent;
+        }
+        
+        .gnb>ul>li.on>a {
+            color: #6c8a10;
+            text-decoration: none;
+            /*  font-weight:700; */
+        }
+        
+        .gnb>ul>li>a:hover {
+            /* font-weight:700; letter-spacing:-1px; */
+        }
+        
+        .gnb>ul>li.on>a:after {
+            content: "";
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gnb-wrap">
+        <gnb class="gnb">
+            <ul>
+                <li>
+                    <a href="#">aaaaaaaa</a>
+                    <div class="gnb-ext">
+                        <div class="inner-box">
+                            <ul>
+                                <li class="active"><a href="#">aaaaaa11</a></li>
+                                <li><a href="#">aaaaaaa22</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="active on"><a href="#">bbbbbbbb</a>
+                    <!-- 비로그인시 메뉴부분 메세지를 위해 on 클래스 임시적용 -->
+                    <div class="gnb-ext">
+                        <div class="inner-box">
+                            <ul>
+                                <li><a href="#">bb11</a></li>
+                                <li><a href="#">bb22</a></li>
+                                <li><a href="#">bb33</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">ccccccccc</a>
+                    <div class="gnb-ext">
+                        <div class="inner-box">
+                            <ul>
+                                <li><a href="#">cc11</a></li>
+                                <li><a href="#">cc22</a></li>
+                                <li><a href="#">cc33</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">ddddddd</a>
+                    <div class="gnb-ext">
+                        <div class="inner-box">
+                            <ul>
+                                <li><a href="#">ddd11</a></li>
+                                <li><a href="#">ddd22</a></li>
+                                <li><a href="#">ddd33</a></li>
+                                <li><a href="#">ddd44</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </gnb>
+    </div>
+    <!--//GNB end -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>이미지 메타정보</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>색상정보가 많은 경우는 png24를 사용하고 색상정보가 <strike>적은 경우는 png8을 사용</strike></li>
+                                <li>포토샵툴 사용시 <em>웹형식 저장으로 메타정보를 삭제(opt. metadata:none)</em></li>
+                                <li>메타정보 확인 <a href="http://metapicz.com/#landing" target="_blank">http://metapicz.com/#landing</a></li>
+                            </ul>
+                            <blockquote>JPG 이미지포맷에는 촬영기기의 모델명, 촬영일시, 노출 감도, 편집 프로그램 정보 등 그림데이타 이외의 여러 정보가 남겨집니다.<br>PNG 이미지포맷 역시 마지막 수정시간, 색상히스토그램, ICC 칼라 프로필, 감마값 등 그림데이타 이외의 여러 정보가 남겨집니다.<br>이러한 데이타를 흔히 '이미지 메타데이타(Metadata)'라고 부릅니다. 사진편집작업을 할때엔 이러한 정보가 유용하겠지만 웹서비스
+                                UI에서 사용되는 이미지 파일은 이러한 정보를 필요로 하지 않습니다. 다시말해 불필요한 데이타인 셈이지요.<br>통상 20KB 정도의 용량을 차지하는 이들 메타데이타를 제거하면 이미지파일 용량이 줄어들어 웹서비스 로딩 속도가 향상될 것입니다. –NULI</blockquote>
+                            <div class="shot">
+                                <strong>툴(photoshop)에서 삭제</strong>
+                                <p><img src="../images/meta-del-tool02.jpg" alt="" style="border:1px solid #ccc; margin-top:5px; display:inline-block"></p>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(4, 1);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

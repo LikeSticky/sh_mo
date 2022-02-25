@@ -1,0 +1,561 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .as-has-scroll {
+            width: 100%;
+            height: 100px;
+        }
+        
+        .guide-add-space a {
+            margin-right: 20px;
+        }
+        /* 임시 높이값 지정 */
+    </style>
+</head>
+
+<body>
+    <div class="test-looping">...</div>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>heading lavel</h2>
+                        <section>
+                            <ul class="scr">
+                                <li></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="contents" style="padding:0; border:0">
+                                    <h1>h1 줄 잠깐 문득 준 재우쳤다</h1>
+                                    <h2>h2 5년 언땅에 못해서 싹싹하였다</h2>
+                                    <h3>h3 듯한 약을 발로 말인가</h3>
+                                    <h4>h4 하였으며 갔다가 처음 청춘의</h4>
+                                    <h5>h5 현실 전을 되었다</h5>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    ...
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>페이지내 이동막기</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>href="#"처럼 크로스해치만 있는 경우는 페이지내 이동을 막음</li>
+                                <li>크로스해치만 있을 경우에 클래스(.able-anchor)로 이동을 해재가능</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <a href="#">링크 클릭시 이동막기</a><br>
+                                <a href="#top">#top</a><br>
+                                <a href="#" class="able-anchor">href='#' class="able-anchor"</a><br>
+                                <a href="http://www.google.com" target="_blank">외부링크</a>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    <a href="#">링크 클릭시 이동막기</a>
+                                    <a href="#top">#top</a>
+                                    <a href="#" class="able-anchor">href='#' class="able-anchor"</a>
+                                    <a href="http://www.google.com" target="_blank">외부링크</a>
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>progress & range</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>range의 output태그는 모던브라우저 기준으로 상황에 맞게 태그변경 가능</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div style="margin:20px 0;">
+                                    <progress class="progress is-info" value="90" max="100">90%</progress>
+                                </div>
+
+                                <div class="range-wrap" style="margin:20px 0;">
+                                    <input class="range" type="range" value="3" min="0" max="10" step="1">
+                                    <output class="bubble"></output>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    ...
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>modal popup</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>팝업의 위치는 css flex(ie10이상 pratial support with prefix)</li>
+                                <li>스크롤 영역은 타이틀의 고정영역으로 생각하고 (vh-타이틀의 높이값)으로 css에서 정의</li>
+                                <li>상태별(체크해제된 상태) 4번째 파라미터(false) 분기처리</li>
+                                <li>팝업의 기본사이즈는 400px,세번째 인자로 팝업사이즈 조절가능</li>
+                                <li><em class="tag tag02">테스트중</em> 포커스회귀를 위해 클릭시 data-focus에 팝업의 아이디를 부여하고 닫을때 <em>data-focus의 아이디로 매칭</em>하여 포커스처리<br>해당페이지에서 같은 레이어를 팝업하는 경우좀더 테스트가 필요함</li>
+                                <li><em class="tag tag02">테스트중</em> 시간연장 처럼 수동적인 팝업은 테스트가 필요함</li>
+                            </ul>
+                            <div class="rendering guide-add-space">
+                                <h3>Screen Rendering</h3>
+                                <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop', '800');">가로 800픽셀 고정팝업</a>
+                                <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop2');">기본팝업</a>
+                                <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop4');">타이틀이없는 팝업</a>
+                                <span style="padding:0 10px"></span>
+                                <div class="chk">
+                                    <input type="checkbox" id="tempChkA001A" checked onclick="SHS.modalLayer.open($(this), 'tempPop', '', 'false');">
+                                    <label for="tempChkA001A">체크해제 상태일때만 팝업</label>
+                                </div>
+
+                                <style>
+                                    #bar {
+                                        background-color: white;
+                                        width: 100%;
+                                        height: 20px;
+                                        background-color: #ccc;
+                                        position: relative;
+                                        box-sizing: border-box;
+                                    }
+                                    
+                                    #bar_core {
+                                        background-color: red;
+                                        width: 40px;
+                                        height: 20px;
+                                        position: relative;
+                                    }
+                                    
+                                    #digit {
+                                        width: 100%;
+                                        text-align: center;
+                                        box-sizing: border-box;
+                                    }
+                                </style>
+                                <!-- <div id="bar">
+                                    <div id="bar_core"></div>
+                                </div>
+                                <input type="text" id="digit" value="" />
+                                <a href="#" id="tickRefresh">시간연장</a> -->
+
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: js; gutter: false; toolbar:false">
+                                    // 기본속성
+                                   SHS.modalLayer.open($(this), 'tempPop');
+                                   
+                                   // 페이지로드시 팝업은 this 파라미터제거
+                                   SHS.modalLayer.open('', 'tempPop');
+                                   
+                                   // 가로사이즈 600픽셀로 지정
+                                   SHS.modalLayer.open($(this), 'tempPop', '600');
+                                   
+                                   // 체크해제된 상태(false)일때만 오픈
+                                   SHS.modalLayer.open($(this), 'tempPop', '', 'false');
+
+                                   // 팝업창 닫기
+                                   SHS.modalLayer.close('tempPop');
+
+                                   // 팝업창 모두닫기(포커스가 초기화되므로 되도록 지양)
+                                   SHS.modalLayer.close();
+                                </pre>
+                                <h3>code pattern</h3>
+                                <pre class="brush: js; gutter: false; toolbar:false">
+                                    ...
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>modeless</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>3개의 파라미터를 전달하며, 각각 $(this), 툴팁아이디, 고정높이값(auto scroll)</li>
+                                <li>클릭시 <em>.tooltip 노드안에 레이어영역 부분을 append / momove</em></li>
+                                <li>요소의 아래방향으로 툴팁되며, 좌우는 윈도우의 가운데를 기점으로 여백이 많은곳으로 노출</li>
+                                <li><em class="tag">작업중</em>기능상으로만 우선 적용되었으며, 디자인은 미반영상태</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>
+                                    <div class="lyr-wrap-rela tooltip">
+                                        <a href="#" onclick="SHS.modeless.open($(this), 'tooltip01', '200');" class="ico-tooltip" title="상세보기">모달리스 tooltip01</a>
+                                    </div>나는 tooltip 레이어다. 나는 tooltip 레이어다. 나는 tooltip 레이어다. 나는 tooltip 레이어다. 나는 tooltip 레이어다.
+                                    <div class="lyr-wrap-rela tooltip">
+                                        <a href="#" onclick="SHS.modeless.open($(this), 'tooltip02');" class="ico-tooltip" title="상세보기">모달리스 tooltip02</a>
+                                    </div>에 의거 저율 과세됨
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                <div class="lyr-wrap-rela tooltip">
+                                    <a href="#" onclick="SHS.modeless.open($(this), 'tooltip01', '200');" class="ico-tooltip" title="상세보기">모달리스</a>
+                                </div>
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>module ... box</h2>
+                        <section>
+                            <ul class="scr">
+                                <li></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <!--
+                                -->
+                            </div>
+                            <div class="key-search">
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <strong>정렬순서</strong>
+                                    </div>
+                                    <div class="col col-3">
+                                        <div>
+                                            <select class="select">
+                                                <option selected="">Open</option>
+                                                <option value="1">One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1">
+                                        <strong>정렬순서</strong>
+                                    </div>
+                                    <div class="col col-3">
+                                        <div>
+                                            <select class="select">
+                                                <option selected="">Open</option>
+                                                <option value="1">One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col col-1">
+                                        <strong>정렬순서</strong>
+                                    </div>
+                                    <div class="col col-3">
+                                        <div>
+                                            <select class="select">
+                                                <option selected="">Open</option>
+                                                <option value="1">One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <strong>정렬</strong>
+                                    </div>
+                                    <div class="col col-7">
+                                        <input type="text" class="ipt aside-remain30">
+                                    </div>
+                                    <div class="col col-1">
+                                        <strong>정렬순서</strong>
+                                    </div>
+                                    <div class="col col-3">
+                                        aaaa
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                                        
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>icon & chips & tag</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>아이콘은 클래스와 data-ico의 조합으로 사용(변수를 사용할수 있게 css를 같이 정의) <a href="module_icon.html">아이콘 리스트</a></li>
+                                <li>data-ico의 정의에 따라 이미지를 선언</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>
+                                    <i class="ico-set" data-ico="chevron-down"></i>
+                                </div>
+                                <div style="margin:10px 0;">
+                                    <i class="tag-set" data-tag="success">success</i>
+                                </div>
+                                <div>
+                                    <i class="chip-set" data-chip="success">55</i>
+                                    <i class="chip-set" data-chip="warning">100</i><br>
+                                </div>
+
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    <!-- icon var(--chevron-down) -->
+                                    <i class="ico-set" data-ico="chevron-down"></i>
+                                    
+                                    <!-- tag -->
+                                    <i class="tag-set" data-tag="success">suceess</i>
+
+                                    <!-- chip -->
+                                    <i class="chip-set" data-chip="warning">100</i>
+                                
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>pagination</h2>
+                        <section>
+                            <ul class="scr">
+                                <li></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <ul class="pagination">
+                                    <a href="#"><i class="prev">이전</i></a></li>
+                                    <a href="#">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#" class="active">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <a href="#"><i class="next">다음</i></a></li>
+                                </ul>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                <div>
+                                ...
+                                </div>
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>dimmed layer</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>특정한 경우에 딤드만 필요한 경우</li>
+                            </ul>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: js; gutter: false; toolbar:false">
+                                    // dimmed open
+                                    SHS.onlyDimmed.open()
+
+                                    // dimmed close
+                                    SHS.onlyDimmed.close()
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>loading spinner</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>파라미터는 특정메세지 노출을 원할 경우에 사용</li>
+                                <li>파마미터는 필수값이 아니라서 undefined일 경우는 null(빈공백)으로 대체</li>
+                                <li><em class="tag">작업중</em> 임시적용된 부분으로 디자인 수급시 수정예정</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+
+                                <div style="height:100px; margin:30px 0;">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                <div class="dimmed">
+                                    <div class="loader-wrap">
+                                        <div class="loader"></div>	
+                                        <p class="load-msg">로딩중</p>
+                                    </div>
+                                </div>
+                                </pre>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: js; gutter: false; toolbar:false">
+                                    // spiner open
+                                    SHS.loading.open();
+                                    SHS.loading.open("로딩중");
+
+                                    // spiner close
+                                    SHS.loading.close();
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>module ... box</h2>
+                        <section>
+                            <ul class="scr">
+                                <li></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>...</div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                <div>
+                                ...
+                                </div>
+                                </pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal test -->
+    <div class="lyr-popup-wrap" id="tempPop">
+        <div class="pop-area type-box">
+            <div class="lyr-popup-title">
+                <strong class="pop-tit">타이틀영역</strong>
+            </div>
+            <div class="lyr-popup-contents">
+                <div class="lyr-pop-sec">
+                    <a href="#" class="bb" onclick="SHS.modalLayer.open($(this), 'tempPop2', '500');">기본팝업</a> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br>
+                </div>
+                <div class="lyr-pop-sec">
+                    11111<br>22222<br>33333<br>11111<br>22222<br>33333<br> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br>
+                </div>
+                <div class="lyr-pop-sec">
+                    11111<br>22222<br>33333<br>11111<br>22222<br>33333<br> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br>
+                </div>
+            </div>
+            <a href="#" class="btn-lyr-close" onclick="SHS.modalLayer.close('tempPop');">닫기</a>
+        </div>
+    </div>
+    <div class="lyr-popup-wrap" id="tempPop2">
+        <div class="pop-area type-box">
+            <div class="lyr-popup-title">
+                <strong class="pop-tit">타이틀영역</strong>
+            </div>
+            <div class="lyr-popup-contents">
+                <div class="lyr-pop-sec">
+                    <a href="#" class="bb" onclick="SHS.modalLayer.open($(this), 'tempPop3');">기본팝업</a> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br>
+                </div>
+            </div>
+            <a href="#" class="btn-lyr-close" onclick="SHS.modalLayer.close('tempPop2');">닫기</a>
+        </div>
+    </div>
+    <div class="lyr-popup-wrap" id="tempPop3">
+        <div class="pop-area type-box">
+            <div class="lyr-popup-title">
+                <strong class="pop-tit">타이틀영역</strong>
+            </div>
+            <div class="lyr-popup-contents">
+                <div class="lyr-pop-sec">
+                    333333333333333333333333333<br>22222<br>33333<br>11111<br>22222<br>33333<br> 11111
+                    <br>22222<br>33333<br>11111<br>22222<br>33333<br>
+                </div>
+            </div>
+            <a href="#" class="btn-lyr-close" onclick="SHS.modalLayer.close('tempPop3');">닫기</a>
+        </div>
+    </div>
+    <div class="lyr-popup-wrap" id="tempPop4">
+        <div class="pop-area type-box">
+            <div class="lyr-popup-contents">
+                <div class="lyr-pop-sec">
+
+                    <div id="bar">
+                        <div id="bar_core"></div>
+                    </div>
+                    <input type="text" id="digit" value="" />
+                    <a href="#" id="tickRefresh">시간연장</a>
+                </div>
+            </div>
+            <a href="#" class="btn-lyr-close" onclick="SHS.modalLayer.close('tempPop4');">닫기</a>
+        </div>
+    </div>
+    <div class="lyr-popup-wrap" id="autoPopup">
+        <div class="pop-area type-box">
+            <div class="lyr-popup-contents">
+                <div class="lyr-pop-sec">
+
+                    autoPopup
+                </div>
+            </div>
+            <a href="#" class="btn-lyr-close" onclick="SHS.modalLayer.close('autoPopup');">닫기</a>
+        </div>
+    </div>
+
+    <!-- 툴팁 레이어[#tooltip01] -->
+    <div class="lyr-tooltip tooltip01">
+        <div class="move-cont">
+            <a href="#none" class="as-less-close" onclick="SHS.modeless.close();">툴팁닫기</a>
+            <div class="toolitp-inner">
+                <div class="tooltip-cont">
+                    <p>이상은 반짝이는 꾸며 꽃 이상은 열락의 열매를 하여도 것이다. 대고, 무엇을 구하지 충분히 가지에 온갖 구하기 것이다.</p>
+                    <p>있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다.있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다</p>
+                    <p>이상은 반짝이는 꾸며 꽃 이상은 열락의 열매를 하여도 것이다. 대고, 무엇을 구하지 충분히 가지에 온갖 구하기 것이다.</p>
+                    <p>있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다.있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다</p>
+                    <p>이상은 반짝이는 꾸며 꽃 이상은 열락의 열매를 하여도 것이다. 대고, 무엇을 구하지 충분히 가지에 온갖 구하기 것이다.</p>
+                    <p>있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다.있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다</p>
+                    <p>이상은 반짝이는 꾸며 꽃 이상은 열락의 열매를 하여도 것이다. 대고, 무엇을 구하지 충분히 가지에 온갖 구하기 것이다.</p>
+                    <p>있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다.있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다</p>
+                    <p>이상은 반짝이는 꾸며 꽃 이상은 열락의 열매를 하여도 것이다. 대고, 무엇을 구하지 충분히 가지에 온갖 구하기 것이다.</p>
+                    <p>있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다.있는 청춘이 찾아다녀도, 것이다. 우리 같지 보내는 것이다. 오직 아름답고 귀는 그들은 인생에 커다란 생생하며, 것이다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 툴팁 레이어[#tooltip02] -->
+    <div class="lyr-tooltip tooltip02">
+        <div class="move-cont">
+            <a href="#none" class="as-less-close" onclick="SHS.modeless.close();">툴팁닫기</a>
+            <div class="toolitp-inner">
+                <div class="tooltip-cont">
+                    <p>What is Lorem Ipsum?</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 6);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

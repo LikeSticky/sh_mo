@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #f4f4f4;
+  background-color: #323643;
+}
+
+body #container {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 4rem 2rem;
+}
+
+body #container #heading {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+body #container #px-input {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 20px;
+  font-weight: 400;
+  color: #f4f4f4;
+  background-color: #323643;
+  border: 1px solid #484e60;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  outline: none;
+  transition: all 0.4s ease-in-out;
+}
+
+body #container #px-input:focus {
+  background-color: #3d4252;
+  border: 1px solid #1489ec;
+}
+
+body #container #px-input::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #9399ae;
+}
+
+body #container #output {
+  visibility: hidden;
+  width: 60%;
+  margin: 2rem auto;
+  transition: all 0.4s ease-in-out;
+}
+
+body #container #output h3 {
+  text-align: center;
+  word-spacing: 10px;
+  line-height: 1.5;
+  vertical-align: middle;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+body #container #output h3 #px-text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: 0.5rem;
+  background-color: #3d4252;
+}
+
+body #container #output h3 #rem-text {
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 0.5rem;
+  background-color: #3d4252;
+}

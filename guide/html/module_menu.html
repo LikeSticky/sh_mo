@@ -1,0 +1,138 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>tab menu</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>data-role="tab"</li>
+                                <li>탭의 <em></em>메뉴영역인 area-tab-mnu</em>와 탭의 <em>컨텐츠 영역인 area-tab-cont</em>를 명시선언</li>
+                                <li>각각의 role은 스크립트에서 처리</li>
+                                <li>메뉴의 aria-controls과 컨텐츠의 id연결은 스크립로 랜덤문자를 생성</li>
+                                <li>페이지별 단건인 테이블에서 SHS.tab.active("[data-role='tab']", 0) 인덱스번호로 탭의 활성화를 변경할수 있음</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+
+                                <div data-role="tab" data-show="3" class="tabs">
+                                    <ul class="area-tab-mnu">
+                                        <li><a href="#">연혁</a></li>
+                                        <li><a href="#"><span>인사말</span></a></li>
+                                        <li><a href="#"><i>가치경영체계</i></a></li>
+                                        <li><a href="#">조직도<br>Organization chart</a></li>
+                                        <li><a href="#">신한금융그룹</a></li>
+                                    </ul>
+                                    <div class="area-tab-cont">
+                                        <div class="tab-ele">첫번째 영역</div>
+                                        <div class="tab-ele">두번째 영역</div>
+                                        <div class="tab-ele"><i>세번째 영역</i></div>
+                                        <div class="tab-ele"><span>네번째 영역</span></div>
+                                        <div class="tab-ele">다섯번째 영역</div>
+                                    </div>
+                                </div>
+                                <!-- 
+                                    다른방식의 탭메뉴 형태
+                                    https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html 
+                                -->
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    ...
+							    </pre>
+                            </div>
+                        </section>
+
+                        <h2>accordion</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>data-role="accordion"</li>
+                                <li>로드시 활성화 노드선택 data-show="number" 기본(옵션미지정)은 모두 닫혀진 상태</li>
+                                <li><em>aria-multiselectable="true|false"</em>로 노드간의 인터렉션을 지정</li>
+                                <li>룩에 따라서 클래스적용 가능</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <ul data-role="accordion" data-show="1" aria-multiselectable="true" class="acco-default">
+                                    <li class="toggle-items">
+                                        <button href="#" class="toggle-btn">아코디언 테스트1</button>
+                                        <div class="toggle-ele">
+                                            <div class="text">
+                                                아코디언 테스트1 내용
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="toggle-items">
+                                        <div class="toggle-anchor">
+                                            <button href="#" class="toggle-btn">아코디언 테스트2</button>
+                                        </div>
+                                        <div class="toggle-ele">
+                                            <div class="text">
+                                                아코디언 테스트2 내용
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="toggle-items">
+                                        <div class="toggle-anchor">
+                                            <a href="#" class="toggle-btn">아코디언 테스트3</a>
+                                        </div>
+                                        <div class="toggle-ele">
+                                            <div class="text">
+                                                아코디언 테스트3 내용
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+							</pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 3);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

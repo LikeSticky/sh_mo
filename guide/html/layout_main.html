@@ -1,0 +1,155 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .layout-guide {
+            border: 1px solid #aaa;
+        }
+        
+        .layout-guide strong {
+            display: inline-block;
+            margin: 15px;
+        }
+        
+        .layout-guide strong+div {
+            margin-top: 0;
+        }
+        
+        .layout-guide .layout-justify {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .layout-guide .layout-justify>div {
+            flex: 1
+        }
+        
+        .layout-guide div {
+            background-color: #f9f9f9
+        }
+        /* .layout-guide div strong {
+            color: #666;
+        } */
+        
+        .layout-guide div div {
+            background-color: #ebebeb
+        }
+        
+        .layout-guide div div div {
+            background-color: #ddd;
+        }
+        /* .layout-guide div div strong {
+            color: #999;
+        } */
+        
+        .layout-guide div {
+            border: 1px solid #ccc;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>메인가이드</h2>
+                        <section>
+                            <ul class="scr">
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="layout-guide">
+                                    <strong>body</strong>
+                                    <div class="block">
+                                        <strong style="color:var(--emp-st)">data-role=wrap</strong>
+                                        <div class="block">
+                                            <strong>data-role="page"</strong>
+                                            <div class="block">
+                                                <strong>data-role="header" data-position="top"</strong>
+                                            </div>
+                                            <div class="block" style="height: 300px;">
+                                                <strong>data-role="content" id="content"</strong>
+                                            </div>
+                                            <div class="block">
+                                                <strong>data-role="footer" data-position="bottom"</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="block">
+                                        <strong style="color:var(--emp-nd)">data-role="modal"</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    <div data-role="wrap" class="wrap">
+                                        <div id="acc-skip">
+                                            <a href="#content">본문 바로가기</a>
+                                        </div>
+                                        <div data-role="page">
+                                            <header data-role="header" data-position="top">
+                                                <div>
+                                                    topper
+                                                </div>
+                                                <nav>
+                                                    nav
+                                                </nav>
+                                            </header>
+                                
+                                            <div data-role="content" id="content">
+                                                content
+                                            </div>
+                                
+                                            <footer data-role="footer" data-position="bottom">
+                                                footer
+                                            </footer>
+                                        </div>
+                                    </div>
+                                
+                                    <div data-role="modal"></div>
+                                </pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(1, 0);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

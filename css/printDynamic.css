@@ -1,0 +1,39 @@
+@charset "utf-8";
+@page {
+    size: A4;
+    margin: 10mm;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    html,
+    body {
+        width: 100%;
+        min-width: 1080px;
+    }
+    html,
+    body {
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: 210mm;
+        height: 297mm;
+    }
+    body,
+    input,
+    textarea,
+    button,
+    select {
+        font-family: 'notoSans', '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif;
+    }
+    #wrap {
+        width: 210mm;
+        height: 297mm;
+        padding: 0px !important;
+        margin: 0px !important;
+        page-break-after: always;
+    }
+}

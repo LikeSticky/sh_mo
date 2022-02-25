@@ -1,0 +1,188 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .thumb-list {
+            max-width: 690px;
+        }
+        
+        .aEle {
+            display: none;
+        }
+        
+        .button-space a,
+        .button-space button {
+            margin: 5px 5px 5px 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>Guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+
+                        <h2>module ... Button</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>페이지의 링크는 앵커, 그 외는 버튼태그를 사용</li>
+                                <li>button태그는 서밋이 발생하지 않게 <em>타입을 꼭 추가(type="button")</em></li>
+                                <li></li>
+                            </ul>
+
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <h4 class="stit">사이즈 <em class="emp-nd">size-[sm|la|xl]</em></h4>
+                                <div>
+                                    <button type="button" class="btn color-st size-la">2개일 경우 좌우정렬</button>
+                                    <button type="button" class="btn color-nd">2개일 경우 좌우정렬</button>
+                                    <a href="#" class="btn color-rd size-sm">3개일 경우 가운데추가</a>
+                                </div>
+
+                                <h4 class="stit">컬러 type color-[st|nd|rd|th]</h4>
+                                <div>
+                                    <button type="button" class="btn color-st">블록버튼</button>
+                                    <button type="button" class="btn color-nd">블록버튼</button>
+                                    <button type="button" class="btn color-rd">블록버튼</button>
+                                    <button type="button" class="btn color-st type-outline">블록버튼</button>
+                                    <button type="button" class="btn color-rd" disabled>블록버튼</button>
+                                </div>
+
+                                <h4 class="stit">타입 <em class="emp-nd">type-[*]</em></h4>
+                                <div>
+                                    <button type="button" class="btn color-st type-underline">블록버튼</button>
+                                    <button type="button" class="btn color-st type-underline-center">블록버튼</button>
+                                    <button type="button" class="btn color-st type-ico">
+                                        <i class=""></i>
+                                        <span>앞에</span>
+                                    </button>
+                                    <button type="button" class="btn color-st type-ico">
+                                        <span>뒤에</span>
+                                        <i class=""></i>
+                                    </button>
+                                </div>
+
+                                <h4 class="stit">그룹별 <em class="emp-nd">parent[.btn-group]</em></h4>
+                                <div class="btn-group">
+                                    <button type="button" class="btn color-st size-sm">인접버튼1</button>
+                                    <button type="button" class="btn color-st size-sm">인접버튼2</button>
+                                    <button type="button" class="btn color-st size-sm">인접버튼3</button>
+                                    <button type="button" class="btn color-st size-sm">인접버튼4</button>
+                                </div>
+
+                                <h4 class="stit">상태별(라디오,체크 타입) <em class="emp-nd">parent[data-btn-choice='sync']</em></h4>
+                                <!-- 2022.02.23 html태그에 aria-pressed 속성이 삽입된 경우만 음성(톡백)피드백정상 스크립트 처리시 음성피드백이 안됨 -->
+                                <div class="btn-group" data-btn-choice="sync">
+                                    <button type="button" class="btn color-st size-sm">단건선택1</button>
+                                    <button type="button" class="btn color-st size-sm">단건선택2</button>
+                                    <button type="button" class="btn color-st size-sm">단건선택3</button>
+                                    <button type="button" class="btn color-st size-sm">단건선택4</button>
+                                </div>
+                                <div class="btn-group " data-btn-choice>
+                                    <button type="button" class="btn color-st size-sm">다건선택1</button>
+                                    <button type="button" class="btn color-st size-sm">다건선택2</button>
+                                    <button type="button" class="btn color-st size-sm">다건선택3</button>
+                                    <button type="button" class="btn color-st size-sm">다건선택4</button>
+                                </div>
+
+                                <h4 class="stit">좌우버튼만 있는 경우 <em class="emp-nd">parents[.btn-jusitify] parent[*]</em></h4>
+                                <div class="btn-jusitify">
+                                    <div>
+                                        <button type="button" class="btn color-st size-sm">왼쪽1</button>
+                                        <button type="button" class="btn color-st size-sm">왼쪽2</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn color-st size-sm">오른쪽1</button>
+                                        <button type="button" class="btn color-st size-sm">오른쪽2</button>
+                                    </div>
+                                </div>
+
+                                <h4 class="stit">중앙버튼이 있는 경우 <em class="emp-nd">parents[.btn-union] parent[left|right]</em></h4>
+                                <div class="btn-union">
+                                    <div class="left">
+                                        <button type="button" class="btn color-st size-sm">왼쪽1</button>
+                                        <button type="button" class="btn color-st size-sm">왼쪽2</button>
+                                    </div>
+                                    <div class="right">
+                                        <button type="button" class="btn color-st size-sm">오른쪽1</button>
+                                        <button type="button" class="btn color-st size-sm">오른쪽2</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn color-st size-sm">중앙1</button>
+                                        <button type="button" class="btn color-st size-sm">중앙2</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+							<div>
+							...
+							</div>
+							</pre>
+                            </div>
+                        </section>
+
+                        <h2>...</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>...</li>
+                                <li></li>
+                            </ul>
+
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>...</div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+							<div>
+							...
+							</div>
+							</pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 2);
+        });
+    </script>
+    <link href="../css/guide.css " rel="stylesheet">
+    <script src="../js/guide.js"></script>
+
+</body>
+
+</html>

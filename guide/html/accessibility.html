@@ -1,0 +1,176 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .contents .s-tit1 {
+            font-size: 1em;
+            margin: 30px 0 10px;
+            text-decoration: underline;
+        }
+        
+        .contents article div.scr {
+            margin-top: 30px;
+        }
+        
+        .contents article div.scr:first-child {
+            margin-top: 0;
+        }
+        
+        .count {
+            width: 100%;
+            border: 1px solid #2b333d;
+            background: #47505a;
+            font-size: 12px;
+            display: table;
+        }
+        
+        .count a {
+            color: #ccc;
+            float: left;
+            width: 20%;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .count a.selected {
+            color: #0fC3ff
+        }
+        
+        table {
+            font-size: 12px;
+            border-top: 1px solid #999;
+            width: 100%;
+        }
+        
+        table thead th {
+            border-bottom: 1px solid #999;
+            padding: 10px 0;
+            background-color: #dfdfdf;
+            vertical-align: middle;
+        }
+        
+        table tbody th {
+            font-weight: normal;
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+        
+        table tbody td {
+            border-bottom: 1px solid #eee;
+            border-left: 1px solid #eee;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        table tbody td:first-child {
+            border-left: 0
+        }
+        
+        table tbody td.tl {
+            text-align: left;
+        }
+        
+        table tbody td .b-small {
+            display: block;
+            margin-top: 3px;
+            font-size: 11px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>Check List</h2>
+                        <section>
+                            <h2>통합 체크리스트 세부가이드</h2>
+                            <div class="scr">
+                                웹접근성 검증툴 체크는 하였는가?
+                                <blockquote>한국형 웹 콘텐츠 접근성 지침에 따라 세부지침을 준수하였는지를 자동으로 점검해주는 검증을 하였는가?<br> 자동평가 툴은 많이 있겠으나 국내에서 많이 사용중인 아래 툴중 1가지 이상에서 체크를 한다.
+                                </blockquote>
+                            </div>
+                            <ul class="scr">
+                                <li><a href="http://www.wah.or.kr/Participation/online-wah.asp" target="_blank">웹접근성 평가도구 소개</a></li>
+                                <li><a href="http://wah.or.kr/Participation/guide.asp" target="_blank">한국형 웹 콘텐츠 접근성 지침 2.1 가이드라인 내려받기</a></li>
+                            </ul>
+
+                            <div class="scr">
+                                HTML validator 통과했는가?
+                                <blockquote>HTML 문법오류체크 및 Entity 문자의 변환이 잘 되었는지 확인.</blockquote>
+                            </div>
+                            <ul class="scr">
+                                <li>W3C의 <a href="http://validator.w3.org/" target="_blank">Markup Validation Service</a></li>
+                            </ul>
+
+                            <div class="scr">
+                                CSS validator 통과했는가?
+                                <blockquote>CSS문법오류체크. 특정브라우저에서만 지원하는 CSS속성 및 CSS3속성을 사용함으로 체크되는 오류는 체크사항에서 제외됨.</blockquote>
+                            </div>
+                            <ul class="scr">
+                                <li>W3C의 <a href="http://jigsaw.w3.org/css-validator/" target="_blank">CSS Validation Service</a></li>
+                            </ul>
+
+                            <div class="scr">
+                                HTML5 마크업 체크는 하였는가?
+                                <blockquote>HTML5에서 추가되는 tag나 사용하지 않는 tag등을 충분히 숙지후 Markup을 진행한다.HTML5 한글 명셋 사이트, W3Schools</blockquote>
+                            </div>
+                            <ul class="scr">
+                                <li><a href="https://dev.w3.org/html5/spec-LC/" target="_blank">HTML5 명세서 사이트</a></li>
+                                <li><a href="http://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                            </ul>
+
+                            <div class="scr">
+                                Cross Browsing 되는가?
+                                <blockquote>모든 브라우저에서 동등한 콘텐츠를 제공 하고 있는지 논리적 구조에 맞게 콘텐츠 제공이 되고 있는지(Layout) 체크.</blockquote>
+                            </div>
+                            <ul class="scr">
+                                <li>Window : Edge, Firefox, Chrome, Whale <strike title="서비스종료">Safari,</strike></li>
+                                <li>MAC : Safari</li>
+                            </ul>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script type="text/javascript">
+        SyntaxHighlighter.all()
+        $(function() {
+            navMenu(3, 0);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

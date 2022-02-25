@@ -1,0 +1,244 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .guide .guide-contents .rendering h2.tit-st {
+            display: block;
+            margin: 50px 0 25px;
+            font-weight: bold;
+            font-size: 26px;
+            color: #333;
+        }
+        
+        .guide .guide-contents .rendering h3.tit-nd {
+            display: block;
+            position: relative;
+            margin: 17px 0 10px;
+            padding-left: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #21409a;
+        }
+        
+        .guide .guide-contents article.brd-view {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>[ACC.] table caption</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>정보성 테이블코드에 <em>data-role='table'이 랩핑되면</em> 접근성고려하여 헤더셀의 정보를 &lt;p id="tableSeq[X]"&gt;자동생성</li>
+                                <li>정보성 테이블태그에는 aria-description의 아이디를 자동부며, 캡쳐태그 연결시킴</li>
+                                <li>테이블의 정렬성격에 따라 <em>data-stand="[center|right]"</em>를 지정</li>
+                                <li>정렬의 기본은 헤더셀은 가운데, 테이터셀은 왼쪽이며 <em>각셀마다 stand-[left|center|right] 개별클래스 적용</em></li>
+                                <li>캡션태그는 스크립트에서 자동생성하며 명시적인 선언을 최우선으로 함.</li>
+                                <li><em>data-role="table-subject"</em>을 적용하면 해더셀의 정보에 추가적인 제목([테이블의 제목셀][등의 정보를 제공]하는 ~ [테이블의제목]안내)을 덧붙여 캡션을 구성</li>
+                                <li>타이틀영역의 우측의 해드노트와 테이블의 하단의 풋노트영역은 필요시 추가</li>
+                                <li>자유도가 있는 테이블의 생성이 필요한 경우에 따라 테이블에 클래스적용 가능</li>
+                                <li>동적으로 생성된 경우는 <em>SHS.tblSummary()</em></li>
+                            </ul>
+
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div data-role="table">
+                                    <div class="tbl-topper">
+                                        <strong data-role="table-subject">예금 관련 수수료</strong>
+                                        <div class="headnote">금액단위 (원)</div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">구분</th>
+                                                <th scope="col">상품</th>
+                                                <th scope="col">3개월</th>
+                                                <th scope="col">줄바꿈처리는<br>스페이스 처리</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>적립식 예금<br>(목돈모으기상품)</td>
+                                                <td>정기적금</td>
+                                                <td class="stand-center">-</td>
+                                                <td class="stand-right">1.7%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="footnote">일정액을 일정기간 동안 예치하였을 경우의 만기지급액을 계산합니다.</div>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    &lt;div data-role="table">
+                                        &lt;div class="tbl-topper">
+                                            &lt;strong data-role="table-subject">타이틀 영역&lt;/strong>
+                                            &lt;div class="headnote">헤드노트 영역&lt;/div>
+                                        &lt;/div>
+                                        &lt;table>
+                                            &lt;thead>
+                                                &lt;tr>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;th scope="col">&lt;/th>
+                                                &lt;/tr>
+                                            &lt;/thead>
+                                            &lt;tbody>
+                                                &lt;tr>
+                                                    &lt;td>적립식 예금<br>(목돈모으기상품)&lt;/td>
+                                                    &lt;td>정기적금&lt;/td>
+                                                    &lt;td class="stand-center">-&lt;/td>
+                                                    &lt;td class="stand-right">1.7%&lt;/td>
+                                                &lt;/tr>
+                                            &lt;/tbody>
+                                        &lt;/table>
+                                        &lt;div class="footnote">풋노트 영역&lt;/div>
+                                    &lt;/div>
+                                </pre>
+                            </div>
+
+
+
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div data-role="table" data-stand="center">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">없는</th>
+                                                <th scope="col">눈에</th>
+                                                <th scope="col">않는</th>
+                                                <th scope="col">있으며</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>기본 가운데정렬</td>
+                                                <td>data-stand="center"</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    &lt;div data-role="table" data-stand="center">
+                                        &lt;table>
+                                            &lt;thead>
+                                                &lt;tr>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;th scope="col">&lt;/th>
+                                                &lt;/tr>
+                                            &lt;/thead>
+                                            &lt;tbody>
+                                                &lt;tr>
+                                                    &lt;td>기본 가운데정렬&lt;/td>
+                                                    &lt;td>data-stand="center"&lt;/td>
+                                                    &lt;td>&lt;/td>
+                                                    &lt;td>&lt;/td>
+                                                &lt;/tr>
+                                            &lt;/tbody>
+                                        &lt;/table>
+                                    &lt;/div>
+                                </pre>
+                            </div>
+
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div data-role="table" data-stand="right">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="col">미인을</th>
+                                                <td>새</td>
+                                                <td>무엇이</td>
+                                                <td>보는</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="col">기본 우측정렬</th>
+                                                <td>data-stand="right"</td>
+                                                <td>33.3 %</td>
+                                                <td>10,000 원</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    &lt;div data-role="table" data-stand="right">
+                                        &lt;table>
+                                            &lt;tbody>
+                                                &lt;tr>
+                                                    &lt;th scope="col">&lt;/th>
+                                                    &lt;td>&lt;/td>
+                                                    &lt;td>&lt;/td>
+                                                    &lt;td>&lt;/td>
+                                                &lt;/tr>
+                                                &lt;tr>
+                                                    &lt;th scope="col">기본 우측정렬&lt;/th>
+                                                    &lt;td>data-stand="right"&lt;/td>
+                                                    &lt;td>33.3 %&lt;/td>
+                                                    &lt;td>10,000 원&lt;/td>
+                                                &lt;/tr>
+                                            &lt;/tbody>
+                                        &lt;/table>
+                                    &lt;/div>
+                                </pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 0);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

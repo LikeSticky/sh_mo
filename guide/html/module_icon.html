@@ -1,0 +1,218 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        .guide-icon-set {
+            overflow: hidden;
+        }
+        
+        .guide-icon-set hr {
+            margin: 20px 0;
+            display: block;
+            border: none
+        }
+        
+        .guide-heading-line>* {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .guide-heading-line>::after,
+        .guide-heading-line>::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - (calc(.2px + .05em)/ 2));
+            width: 2000px;
+            border-bottom: calc(.2px + .05em) solid #e5e5e5
+        }
+        
+        .guide-heading-line>::before {
+            right: 100%;
+            margin-right: calc(5px + .3em)
+        }
+        
+        .guide-heading-line>::after {
+            left: 100%;
+            margin-left: calc(5px + .3em)
+        }
+        
+        .guide-ico-group {
+            display: flex
+        }
+        
+        .guide-ico-group>* {
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            border: 1px solid #d3d3d3;
+            margin: 10px 10px 10px 0
+        }
+        
+        .guide-ico-group em {
+            display: block;
+            text-align: center;
+            font-size: 10px;
+        }
+        
+        .guide-ico-group input[type='text'] {
+            opacity: 0;
+            position: absolute;
+            top: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>아이콘</h2>
+                        <section>
+                            <ul class="scr">
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="guide-icon-set">
+                                    <h4 class="guide-heading-line">
+                                        <span>icon, bullet, deco</span>
+                                    </h4>
+                                    <div class="guide-ico-group">
+                                        <span>
+                                            <i class="ico-set" data-ico="chevron-down"></i>
+                                        </span>
+                                        <span>
+                                            <i class="ico-set" data-ico="chevron-up"></i>
+                                        </span>
+                                        <span>
+                                            <i class="ico-set" data-ico="chat-text"></i>
+                                        </span>
+                                    </div>
+                                    <hr>
+                                    <h4 class="guide-heading-line">
+                                        <span>image</span>
+                                    </h4>
+                                    <div class="guide-ico-group">
+                                        <i class="ico-set" data-ico=""></i>
+                                    </div>
+                                    <hr>
+                                    <h4 class="guide-heading-line">
+                                        <span>etcetera</span>
+                                    </h4>
+                                    <div class="guide-ico-group">
+                                        <i class="ico-set" data-ico=""></i>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    //
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>태그</h2>
+                        <section>
+                            <ul class="scr">
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>
+                                    <i class="tag-set" data-tag="success">success</i>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    //
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>칩</h2>
+                        <section>
+                            <ul class="scr">
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>
+                                    <i class="chip-set" data-chip="success">55</i>
+                                    <i class="chip-set" data-chip="warning">100</i>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    //
+                                </pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 6);
+        });
+
+        $(function() {
+            $(".guide-ico-group span").each(function() {
+
+                $(this).append('<em ico-size></em><em ico-name></em><input type="text">');
+
+                let dataIco = $(this).find("[data-ico]"),
+                    icoSize = $(this).find("[ico-size]"),
+                    icoName = $(this).find("[ico-name]"),
+                    ico = $(this).find("i");
+                icoSize.text(dataIco.width() + "×" + dataIco.height());
+                icoName.text(dataIco.data("ico"));
+
+                $(this).on("click", function() {
+                    let urlbox = $(this).find("[data-ico]").data("ico");
+                    var getTxt = $(this).find("input[type='text']").val(urlbox).select();
+                    document.execCommand('Copy');
+                })
+                $(this).hover(function() {
+                    $(this).attr("title", "클릭시 클립보드에 복사");
+                })
+
+            })
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

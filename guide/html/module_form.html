@@ -1,0 +1,382 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        input[type='text'].readonly {
+            border: 1px solid #ddd;
+        }
+        
+        .by-solid+.by-solid {
+            margin: 10px 0;
+        }
+        
+        .guide-select .select {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>Checkbox &amp; radio Elements</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>기본적용은 레이블태그와 같이 적용</li>
+                                <li>checkbox, radio 디자인 적용은 <em>input의 type으로 결정</em></li>
+                                <li><em>2줄이상은 멀티클래스적용(.multi-line)</em> 정렬은 상단으로 변경</li>
+                                <li><em>레이블이 없이 단독사용시는 title속성 부여</em></li>
+                                <li>.chk-group으로 랩핑시 .chk의 기본 마진은 right:20px <em class="tag">임시수치로 디자인 적용후 삭제예정</em></li>
+                                <li>텍스트노출없이 사용할 경우라도 빈 label(디자인이 적용되는 부분)태그는 필요</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <h4 class="stit">checkbox</h4>
+                                <div class="chk-group">
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkA01">
+                                        <label for="tempChkA01">기본</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkA02" checked>
+                                        <label span for="tempChkA02"><spa>태그안의 기본(되도록 지양)</spa></label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkA03" checked>
+                                        <label for="tempChkA03">기본선택</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkA04" disabled>
+                                        <label for="tempChkA04">선택불능</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkA05" checked disabled>
+                                        <label for="tempChkA05">해제불능</label>
+                                    </div>
+                                </div>
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                        <div class="chk-group">
+                                            <div class="chk">
+                                                <input type="checkbox" id="tempChkA01">
+                                                <label for="tempChkA01">기본</label>
+                                            </div>
+                                            <div class="chk">
+                                                &lt;input type="checkbox" id="tempChkA02" checked&gt;
+                                                <label span for="tempChkA02"><spa>태그안의 기본(되도록 지양)</spa></label>
+                                            </div>
+                                            <div class="chk">
+                                                &lt;input type="checkbox" id="tempChkA03" checked&gt;
+                                                <label for="tempChkA03">기본선택</label>
+                                            </div>
+                                            <div class="chk">
+                                                &lt;input type="checkbox" id="tempChkA04" disabled&gt;
+                                                <label for="tempChkA04">선택불능</label>
+                                            </div>
+                                            <div class="chk">
+                                                &lt;input type="checkbox" id="tempChkA05" checked disabled&gt;
+                                                <label for="tempChkA05">해제불능</label>
+                                            </div>
+                                        </div>
+                                    </pre>
+                                </div>
+
+                                <h4 class="stit">radio</h4>
+                                <div class="chk">
+                                    <input type="radio" id="tempRdo01" name="tempRdo">
+                                    <label for="tempRdo01">기본</label>
+                                </div>
+                                <div class="chk">
+                                    <input type="radio" id="tempRdo02" name="tempRdo">
+                                    <label for="tempRdo02"><span>기본선택</span></label>
+                                </div>
+                                <div class="chk">
+                                    <input type="radio" id="tempRdo03" name="tempRdo" disabled>
+                                    <label for="tempRdo03">선택불능</label>
+                                </div>
+                                <div class="chk">
+                                    <input type="radio" id="tempRdo03" name="tempRdoTemp" disabled checked>
+                                    <label for="tempRdo03">선택불능</label>
+                                </div>
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                        <div class="chk">
+                                            <input type="radio" id="tempRdo01" name="tempRdo">
+                                            <label for="tempRdo01">기본</label>
+                                        </div>
+                                        <div class="chk">
+                                            <input type="radio" id="tempRdo02" name="tempRdo">
+                                            <label for="tempRdo02"><span>기본선택</span></label>
+                                        </div>
+                                        <div class="chk">
+                                            &lt;input type="radio" id="tempRdo03" name="tempRdo" disabled&gt;
+                                            <label for="tempRdo03">선택불능</label>
+                                        </div>
+                                        <div class="chk">
+                                            &lt;input type="radio" id="tempRdo03" name="tempRdoTemp" disabled checked&gt;
+                                            <label for="tempRdo03">선택불능</label>
+                                        </div>
+                                    </pre>
+                                </div>
+
+                                <h4 class="stit">텍스트노출없이 엘리먼트만 사용시</h4>
+                                <div class="chk">
+                                    <input type="radio" id="tempRdoB01" name="tempRdoB" title="레이블">
+                                    <!-- aria-label -->
+                                    <label for="tempRdoB01"></label>
+                                </div>
+                                <div class="chk">
+                                    <input type="checkbox" id="tempChkB01" title="레이블">
+                                    <label for="tempChkB01"></label>
+                                </div>
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                        <div class="chk">
+                                            <input type="radio" id="tempRdoB01" name="tempRdoB" title="레이블"><!-- aria-label -->
+                                            <label for="tempRdoB01"></label>
+                                        </div>
+                                        <div class="chk">
+                                            <input type="checkbox" id="tempChkB01" title="레이블">
+                                            <label for="tempChkB01"></label>
+                                        </div>
+                                    </pre>
+                                </div>
+
+                                <h4 class="stit">block level</h4>
+                                <div class="chk by-block">
+                                    <input type="checkbox" id="tempChkC01" checked>
+                                    <label for="tempChkC01"><span>태그안의 기본</span></label>
+                                </div>
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                        <div class="chk by-block">
+                                            &lt;input type="checkbox" id="tempChkC01" checked&gt;
+                                            <label for="tempChkC01"><span>태그안의 기본</span></label>
+                                        </div>
+                                    </pre>
+                                </div>
+
+                                <h4 class="stit">solid</h4>
+                                <div class="by-solid">
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkS02" checked>
+                                        <label for="tempChkS02"><span>체크1</span></label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkS03" checked>
+                                        <label for="tempChkS03">줄바꿈<br>체크2</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkS04" disabled>
+                                        <label for="tempChkS04">선택불능</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkS05" checked disabled>
+                                        <label for="tempChkS05">해제불능</label>
+                                    </div>
+                                </div>
+                                <div class="by-solid" data-nospace>
+                                    <div class="chk">
+                                        <input type="radio" id="tempRdoS02" name="tempRdo" checked>
+                                        <label for="tempRdoS02"><span>라디오1</span></label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="radio" id="tempRdoS03" name="tempRdo" checked>
+                                        <label for="tempRdoS03">줄바꿈<br>라디오2</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="radio" id="tempRdoS04" name="tempRdo" disabled>
+                                        <label for="tempRdoS04">선택불능</label>
+                                    </div>
+                                    <div class="chk">
+                                        <input type="radio" id="tempRdoS05" name="tempRdoExp" checked disabled>
+                                        <label for="tempRdoS05">해제불능</label>
+                                    </div>
+                                </div>
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                        <div class="by-solid">
+                                            <div class="chk">
+                                                <input type="checkbox" id="tempChkS02" checked>
+                                                <label for="tempChkS02"><span>체크1</span></label>
+                                            </div>
+                                            ...omitted...
+                                        </div>
+                                        <div class="by-solid" data-nospace>
+                                            <div class="chk">
+                                                <input type="radio" id="tempRdoS02" name="tempRdo" checked>
+                                                <label for="tempRdoS02"><span>라디오1</span></label>
+                                            </div>
+                                            ...omitted...
+                                        </div>
+                                    </pre>
+                                </div>
+
+                                <h4 class="stit">switching</h4>
+                                <div class="by-switch">
+                                    <div class="switch-area">
+                                        <input type="checkbox">
+                                        <div class="switch-state"></div>
+                                        <div class="switch-bg"></div>
+                                    </div>
+                                </div>
+                                <div class="by-switch">
+                                    <div class="switch-area">
+                                        <input type="radio" name="switch-name">
+                                        <div class="switch-state"></div>
+                                        <div class="switch-bg"></div>
+                                    </div>
+                                    <div class="switch-area">
+                                        <input type="radio" name="switch-name">
+                                        <div class="switch-state"></div>
+                                        <div class="switch-bg"></div>
+                                    </div>
+                                </div>
+
+
+
+                                <h4 class="stit">etcetera</h4>
+                                <div class="chk" data-chk-draw>
+                                    <input type="checkbox" id="tempChkA06">
+                                    <label for="tempChkA06">드로잉[chk-draw]</label>
+                                </div>
+
+
+
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                    ...                               
+                                    </pre>
+                                </div>
+                            </div>
+                        </section>
+
+                        <h2>.....</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>.....</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="ipt-file">
+                                    <input type="text" class="ipt">
+                                    <input type="text" class="ipt state-success">
+                                    <input type="text" class="ipt state-fail">
+                                    <input type="text" class="ipt" value="readonly" readonly>
+                                    <input type="text" class="ipt" value="disabled" disabled>
+
+                                    <input type="text" readonly class="file-name">
+                                    <label for="temp0501" class="file-label">찾아보기</label>
+                                    <input type="file" name="" id="temp0501" class="file-upload">
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+							.....
+							</pre>
+                            </div>
+                        </section>
+
+                        <h2>.....</h2>
+                        <section>
+                            <ul class="scr">
+                                <li><em class="tag">작업중</em> 셀렉트의 placeholder처럼 보이기 위해서는 <em>required, value(유효값, 널값)이 필수</em></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="guide-select">
+                                    <select class="select" name="" id="" title="" required>
+                                        <option value>value 선언되고 값이 없는 경우value 선언되고 값이 없는 경우value 선언되고 값이 없는 경우value 선언되고 값이 없는 경우</option>
+                                        <option value="1" selected>select01</option>
+                                        <option value="2">select02</option>
+                                        <option value="3">select03</option>
+                                        <option value="4">select04</option>
+                                    </select>
+
+                                    <select class="select" name="" id="" title="" required>
+                                        <option>value 선언이 없는 경우</option>
+                                        <option value="1">select01</option>
+                                        <option value="2">select02</option>
+                                        <option value="3">select03</option>
+                                        <option value="4">select04</option>
+                                    </select>
+
+                                    <select class="select" name="" id="" title="" required>
+                                        <option value>value 선언되고 값이 없는 경우</option>
+                                        <option value="1">select01</option>
+                                        <option value="2">select02</option>
+                                        <option value="3">select03</option>
+                                        <option value="4">select04</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false; highlight:[2,10]">
+                                    &lt;select class="select" name="" id="" title="" required>
+                                        <option>value 선언이 없는 경우</option>
+                                        <option value="1">select01</option>
+                                        <option value="2">select02</option>
+                                        <option value="3">select03</option>
+                                        <option value="4">select04</option>
+                                    &lt;/select>
+
+                                    &lt;select class="select" name="" id="" title="" required>
+                                        &lt;option value>value 선언되고 값이 없는 경우&lt;/option>
+                                        <option value="1">select01</option>
+                                        <option value="2">select02</option>
+                                        <option value="3">select03</option>
+                                        <option value="4">select04</option>
+                                    &lt;/select>
+                                </pre>
+                            </div>
+                        </section>
+
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 1);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

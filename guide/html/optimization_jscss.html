@@ -1,0 +1,79 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>jquery/css</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>css, js의 경우 수정이 발생하지 않는 파일들은 압축형태로 제공(*.min.js|css)</li>
+                                <li>압축형태로 제공되는 파일중에 core를 제외한 파일들은 원본파일을 보관(*.[source].js|css)하여 추후수정에 사용</li>
+                                <li>압축파일의 용량은 아래와 같으며, 속도 여러상황에 따라 다르지만 통상적으로 25%-35% 개선효과(용량이 적은 파일일수록 압축률은 낮아질수 있음)를 기대할수 있음.</li>
+                            </ul>
+                            <div class="shot">
+                                <strong>ini.css [opt. Compress colors /  Compress font-weight / Remove unnecessary backslashes / Remove last semi-colons] </strong>
+                                <p><img src="../images/compress-css02.jpg" alt="" style="width:auto"></p><br>
+                                <strong>jquery.bxslider-rahisified.js  [opt. null] </strong>
+                                <p>제공된 파일로 사용</p><br>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern : public</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                        &lt;link href="/css/ini.min.css" rel="stylesheet"> <!--압축된 파일로 제공-->
+                        &lt;link href="/css/module.css" rel="stylesheet">
+                        &lt;link href="/css/contents.css" rel="stylesheet">
+                        &lt;script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script> <!--압축된 파일로 제공-->
+                        &lt;script type="text/javascript" src="/js/ui.js"></script>
+                        </pre>
+
+                                <h3>code pattern : private</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                        &lt;script type="text/javascript" src="/js/jquery.bxslider-rahisified.min.js"></script> <!--압축된 파일로 제공-->
+                        &lt;script type="text/javascript" src="/js/google.map.js"></script>
+                    </div>
+                </section>
+            </article>
+        </section>
+    </div>
+    </div>
+</div>
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/ui.js"></script>
+<script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+<script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+<script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+<script>
+    SyntaxHighlighter.all();
+    $(function() {
+        navMenu(4, 0);
+    });
+</script>
+<link href="../css/guide.css" rel="stylesheet">
+<script src="../js/guide.js"></script>
+</body>
+
+</html>
