@@ -167,11 +167,49 @@ $(function() {
     ADMIN.init();
     keyEvent();
     $(".shot").trigger("click");
+    if ($('.device-frame').length < 1) {
+        var deviceBtns = '<div class="device-frame" style="position:absolute; bottom:-60px !important; left:0; transition-duration:0.3s">' +
+            '<div class="device-btns">' +
+            '<button type="button" data-mode="iPhone5">아이폰5</button>' +
+            '<button type="button" data-mode="galaxyS5">갤럭시 S5</button>' +
+            '<button type="button" data-mode="iPhone6">아이폰6</button>' +
+            '<button type="button" data-mode="iPhoneXR">iPhoneXR</button>' +
+            '</div>' +
+            '<strong class="info">iPhone6 : 375x667</strong>' +
+            '</div>';
+        $('.mobile-frame').append(deviceBtns);
+    }
+    $(".device-frame button").off().on("click", function(e) {
+        let mode = $(this).data('mode'),
+            $devFrame = $(".device-frame"),
+            devices = [
+                { 'mode': 'iPhone5', 'width': 320, 'height': 568 },
+                { 'mode': 'galaxyS5', 'width': 360, 'height': 640 },
+                { 'mode': 'iPhone6', 'width': 375, 'height': 667 },
+                { 'mode': 'iPhoneXR', 'width': 414, 'height': 896 },
+            ];
+        for (let i = 0; i < devices.length; i++) {
+            if (mode === devices[i].mode) {
+                $devFrame.css({ 'top': (devices[i].height + 3) + 'px', 'width': (devices[i].width + 17) + 'px' });
+                $devFrame.children('.info').text(devices[i].mode + ' : ' + devices[i].width + ' x ' + devices[i].height);
+                $(".mobile-frame").css({ 'width': (devices[i].width + 17) + 'px', 'height': (devices[i].height) + 'px' });
+                let frameMoove = devices[i].width + 17;
+                console.log(frameMoove)
+                return frameMoove;
+            }
+        }
+    });
 
-    $('body').off().on('click', '.frame_close', function() {
-        console.log("frame_close");
-        $('.mobile-frame').toggleClass('on');
+    $('.frame_close').off().on('click', function() {
+        if ($(this).closest(".mobile-frame").hasClass("on")) {
+            $('.mobile-frame').css("right", -$('.mobile-frame').width() - 6);
+            $('.mobile-frame').removeClass('on')
+        } else {
+            $('.mobile-frame').css("right", "0");
+            $('.mobile-frame').addClass('on')
+        }
     })
+
 });
 
 
@@ -179,6 +217,8 @@ function frameChange($url) {
     var thisFrame = $('#mFrame');
     thisFrame.attr('src', $url);
 }
+
+
 
 function keyEvent() {
     $(document).keydown(function(e) {
