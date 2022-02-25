@@ -31,6 +31,7 @@ var ADMIN = {
             } else {
                 $(".guide-contents .tit").text(ulTxt);
             }
+            /* $(".guide .guide-contents .tit").hide(); */
         },
 
         gnb: function() {
