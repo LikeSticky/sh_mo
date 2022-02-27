@@ -82,7 +82,6 @@ var ADMIN = {
                 $(ele).siblings().removeClass("active").find(">a").attr("title", "");
                 $findEle.css("display", "none");
                 $findEle.eq(getIndex).css("display", "block");
-                console.log(realIndex);
 
                 $(".frt-tbl").empty();
                 if (parseInt(realIndex) >= 10) {
@@ -141,10 +140,8 @@ var ADMIN = {
                                 e.preventDefault;
                                 if (!e.ctrlKey) {
                                     if ($('.mobile-frame').hasClass('on')) {
-                                        console.log("1");
                                         frameChange($url);
                                     } else {
-                                        console.log("2");
                                         frameChange($url);
                                         $(".frame_close").trigger('click');
                                     }
@@ -168,7 +165,7 @@ $(function() {
     keyEvent();
     $(".shot").trigger("click");
     if ($('.device-frame').length < 1) {
-        var deviceBtns = '<div class="device-frame" style="position:absolute; bottom:-60px !important; left:0; transition-duration:0.3s">' +
+        let deviceBtns = '<div class="device-frame" style="position:absolute; bottom:-60px !important; left:0; transition-duration:0.3s">' +
             '<div class="device-btns">' +
             '<button type="button" data-mode="iPhone5">아이폰5</button>' +
             '<button type="button" data-mode="galaxyS5">갤럭시 S5</button>' +
