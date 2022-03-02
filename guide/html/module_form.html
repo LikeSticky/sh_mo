@@ -21,7 +21,8 @@
             margin: 10px 0;
         }
         
-        .guide-select .select {
+        .guide-space:not(.ipt-file) input,
+        .guide-space .select {
             margin: 5px 0;
         }
     </style>
@@ -220,18 +221,18 @@
                                     <pre class="brush: xhtml; gutter: false; toolbar:false;">
                                         <div class="by-solid">
                                             <div class="chk">
-                                                <input type="checkbox" id="tempChkS02" checked>
+                                                &lt;input type="checkbox" id="tempChkS02" checked>
                                                 <label for="tempChkS02"><span>체크1</span></label>
                                             </div>
                                             ...omitted...
                                         </div>
-                                        <div class="by-solid" data-nospace>
+                                        &lt;div class="by-solid" data-nospace>
                                             <div class="chk">
-                                                <input type="radio" id="tempRdoS02" name="tempRdo" checked>
+                                                &lt;input type="radio" id="tempRdoS02" name="tempRdo" checked>
                                                 <label for="tempRdoS02"><span>라디오1</span></label>
                                             </div>
                                             ...omitted...
-                                        </div>
+                                        &lt;/div>
                                     </pre>
                                 </div>
 
@@ -256,39 +257,56 @@
                                     </div>
                                 </div>
 
-
+                                <div class="exp">
+                                    <h3>code pattern</h3>
+                                    <pre class="brush: xhtml; gutter: false; toolbar:false;">
+                                        <div class="by-switch">
+                                            <div class="switch-area">
+                                                <input type="checkbox">
+                                                <div class="switch-state"></div>
+                                                <div class="switch-bg"></div>
+                                            </div>
+                                        </div>
+                                    </pre>
+                                </div>
 
                                 <h4 class="stit">etcetera</h4>
                                 <div class="chk" data-chk-draw>
                                     <input type="checkbox" id="tempChkA06">
-                                    <label for="tempChkA06">드로잉[chk-draw]</label>
+                                    <label for="tempChkA06">check drawing</label>
                                 </div>
-
-
 
                                 <div class="exp">
                                     <h3>code pattern</h3>
                                     <pre class="brush: xhtml; gutter: false; toolbar:false;">
-                                    ...                               
+                                        &lt;div class="chk" data-chk-draw&gt;
+                                            <input type="checkbox" id="tempChkA06">
+                                            <label for="tempChkA06">check drawing</label>
+                                        &lt;/div&gt;
                                     </pre>
                                 </div>
                             </div>
                         </section>
 
-                        <h2>.....</h2>
+                        <h2>input</h2>
                         <section>
                             <ul class="scr">
-                                <li>.....</li>
+                                <li>밸리데이션의 속성은 data-state로 설정하며, 기본은 속성만 선언하고 value는 미기입</li>
+                                <li>밸리데이션 성공, 실패는 <em>data-state=success|fail</em></li>
+                                <li>파일필드는 label에 포커스를 주며, 선택시 빈 input에 텍스트를 전달</li>
+                                <li>파일필드의 사이즈(.ipt-file)는 기본 블럭화이며, 블럭사이즈가 아닌 경우는 인스타일로 정의</li>
                             </ul>
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
-                                <div class="ipt-file">
-                                    <input type="text" class="ipt">
-                                    <input type="text" class="ipt state-success">
-                                    <input type="text" class="ipt state-fail">
+                                <div class="guide-space">
+                                    <input type="text" class="ipt" data-state>
+                                    <input type="text" class="ipt" data-state="success">
+                                    <input type="text" class="ipt" data-state="fail">
                                     <input type="text" class="ipt" value="readonly" readonly>
                                     <input type="text" class="ipt" value="disabled" disabled>
+                                </div>
 
+                                <div class="ipt-file">
                                     <input type="text" readonly class="file-name">
                                     <label for="temp0501" class="file-label">찾아보기</label>
                                     <input type="file" name="" id="temp0501" class="file-upload">
@@ -297,8 +315,18 @@
                             <div class="exp">
                                 <h3>code pattern</h3>
                                 <pre class="brush: xhtml; gutter: false; toolbar:false">
-							.....
-							</pre>
+                                    <input type="text" class="ipt" data-state>
+                                    <input type="text" class="ipt" data-state="success">
+                                    <input type="text" class="ipt" data-state="fail">
+                                    <input type="text" class="ipt" value="readonly" readonly>
+                                    <input type="text" class="ipt" value="disabled" disabled>
+
+                                    <div class="ipt-file">
+                                        <input type="text" readonly class="file-name">
+                                        <label for="temp0501" class="file-label">찾아보기</label>
+                                        <input type="file" name="" id="temp0501" class="file-upload">
+                                    </div>
+							    </pre>
                             </div>
                         </section>
 
@@ -309,7 +337,7 @@
                             </ul>
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
-                                <div class="guide-select">
+                                <div class="guide-space">
                                     <select class="select" name="" id="" title="" required>
                                         <option value>value 선언되고 값이 없는 경우value 선언되고 값이 없는 경우value 선언되고 값이 없는 경우value 선언되고 값이 없는 경우</option>
                                         <option value="1" selected>select01</option>

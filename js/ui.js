@@ -29,6 +29,31 @@ let SHS = {
             SHS.tab.init();
             SHS.forms();
 
+
+            // page top
+            window.onscroll = function() {
+                scrollFunction()
+            };
+            const speed = 200; // scroll speed
+            function scrollFunction() {
+                if ($(this).scrollTop() > 500) {
+                    SHS.addActive(".page-top");
+                    // $('.page-top').fadeIn();
+                } else {
+                    SHS.removeActive(".page-top");
+                    // $('.page-top').fadeOut();
+                }
+            }
+            if (!$(".page-top").length) {
+                let topArea = '<div class="page-top">' +
+                    '<button style="float:right;">top</button>' +
+                    '</div>';
+                $("body").append(topArea);
+            }
+
+            $(".page-top button").click(function() { $('body, html').animate({ scrollTop: 0 }, speed) });
+
+
             // time extension
             function timeCheck(sec_num) {
                 var minutes = Math.floor(sec_num / 60);
@@ -38,6 +63,7 @@ let SHS = {
                 return minutes + ':' + seconds;
             }
 
+            // time tick setting
             function tickRefresh() {
                 $("#bar_core")
                     .width(Math.floor(100 * (remaining / totalTime)) + "%")
@@ -71,18 +97,13 @@ let SHS = {
             });
         },
 
-        // myself add class
-        addOn: function(overEle) { $(overEle).addClass("active") },
+        // active class
+        addActive: function(tarEle) { $(tarEle).addClass("active") },
+        removeActive: function(tarEle) { $(tarEle).removeClass("active") },
 
-        // parent add class
-        addOnParent: function(overEle) { $(overEle).parent().addClass("active") },
-
-        // remove class
-        removeOn: function(outEle) { $(outEle).removeClass("active") },
-
-        visibleEle: function(tar) {
-            $("." + tar).show("fast");
-        },
+        // show/hide
+        visibleEle: function(tar) { $("." + tar).show("fast") },
+        hiddenEle: function(tar) { $("." + tar).hide("fast") },
 
         // content go
         skipJump: function() {
@@ -324,10 +345,8 @@ let SHS = {
                     ele.closest(".lyr-wrap-rela")
                         .css("z-index", "100")
                         .append('<div id="' + uniqueLess + '" class="lyr-wrap-abs"></div>'); //title="'+ele.text()+' 상세메뉴"
-
                     ele.closest(".lyr-wrap-rela")
                         .find(".lyr-wrap-abs").css('width', wid + 'px').append(data);
-
                     uniqueIdLess.attr("tabindex", "0");
                     $('#' + uniqueLess).append('<a href="#" class="pop-loop">포커스이동</a>');
                     $(".pop-loop").focus(function() {
@@ -341,16 +360,13 @@ let SHS = {
                             "height": fixed
                         });
                     }
-
                     $(that)
                         .addClass("layerActive")
                         .next().attr('tabindex', '0').show("fast").focus().css("z-index", "1");
-
                     $(document).on("focus", '.less-loop', function() {
                         $(this).closest(".lyr-wrap-abs").attr('tabindex', '0').fadeIn().focus().remove("z-index");
                     });
                 }
-                //SHS.ini.anchorAble();
             },
 
             close: function() {
@@ -372,7 +388,7 @@ let SHS = {
             }).click(function() {
                 let pointEle = $(this).closest("[data-btn-choice]");
                 if (pointEle.data("btnChoice") == "sync") {
-                    pointEle.find(".btn[aria-pressed='true']").attr("aria-pressed", "false");
+                    pointEle.find(".btn[aria-pressed='true']").attr("aria-pressed", "false"); //.not(this)
                     $(this).attr("aria-pressed", "true");
                 } else {
                     if ($(this).attr("aria-pressed") == "true") {
@@ -381,13 +397,6 @@ let SHS = {
                         $(this).attr("aria-pressed", "true");
                     }
                 }
-                // let pointEle = $(this).closest("[data-btn-choice]");
-                // if (pointEle.data("btnChoice") == "sync") {
-                //     pointEle.find(".btn.active").removeClass("active");
-                // } else {
-                //     pointEle.find(".btn.active").not(this).removeClass("active");
-                // }
-                // $(this).toggleClass("active");
             });
 
             // attach files such as file fields
@@ -406,18 +415,9 @@ let SHS = {
 
                 $btnUpload.on('focusin focusout', function(e) {
                     e.type == 'focusin' ?
-                        $label.addClass('file-focus') : $label.removeClass('file-focus');
+                        $label.addClass('active') : $label.removeClass('active');
                 })
             })
-
-            // $('select:required').on('change', function() {
-            //     if ($(this).val()) {
-            //         return $(this).css('color', 'black');
-            //     } else {
-            //         return $(this).css('color', '#aaa');
-            //     }
-            // });
-
         },
 
         // GNB
@@ -595,6 +595,34 @@ let SHS = {
                 SHS.onlyDimmed.close();
             }
         },
+
+        // bd.find('a.bubble').hover(function(){
+        // 	var t = $(this);
+        // 	if(!t.hasClass('no_bubble') && !t.find('.wrp').length){
+        // 		t.append('<span class="wrp"><span class="speech">'+t.attr('title')+'</span><i class="edge"></i></span>').removeAttr('title');
+        // 		if($('html,body').width()-t.offset().left < 80){
+        // 			t.addClass('left').find('.wrp').css({marginTop:t.parent('.wrp').height()/2})
+        // 		} else if(t.offset().top < 80 && !t.parent().parent().hasClass('rd_nav_side')){
+        // 			t.addClass('btm').find('.wrp').css({marginLeft:-t.find('.wrp').width()/2})
+        // 		} else {
+        // 			t.find('.wrp').css({marginLeft:-t.find('.wrp').width()/2})
+        // 		};
+        // 		if(ie8Check) t.find('.wrp').prepend('<i class="ie8_only bl"></i><i class="ie8_only br"></i>');
+        // 	};
+        // 	if(ie8Check) return;
+        // 	if(t.is('.left,.right,.btm')){
+        // 		t.find('.wrp:hidden').fadeIn(150)
+        // 	} else {
+        // 		t.find('.wrp:hidden').css('bottom','150%').animate({
+        // 			bottom:'100%'
+        // 		},{duration:150,specialEasing:{left:'easeInOutQuad'},complete:function(){
+        // 			},step:null,queue:false
+        // 		}).fadeIn(150)
+        // 	}
+        // },function(){
+        // 	if(ie8Check) return;
+        // 	$(this).find('.wrp').fadeOut(100)
+        // })
     } //last
 
 $(function() {

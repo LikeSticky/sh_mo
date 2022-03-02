@@ -59,27 +59,27 @@ strong {
     flex-basis: 100%;
 }
 
-[data-role="wrap"] [data-role="header"] {
+[data-role="page"] [data-role="header"] {
     position: relative;
     width: 100%;
     z-index: 1000;
-}
-
-[data-role="header"] {
     background-color: #fff;
     border-bottom: 1px solid #3399ff;
-    height: 50px;
+    min-height: 50px;
 }
 
-[data-role="footer"] {
+[data-role="page"] [data-role="footer"] {
     position: relative;
     width: 100%;
     z-index: 1000;
     background-color: rgb(216, 216, 216);
     border-top: 1px solid #ccc;
-    height: 50px;
+    min-height: 50px;
     margin-top: auto;
 }
+
+
+/* test */
 
 .container {
     /* position: relative; */

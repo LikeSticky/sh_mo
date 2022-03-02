@@ -115,8 +115,8 @@
                                 <li>스크롤 영역은 타이틀의 고정영역으로 생각하고 (vh-타이틀의 높이값)으로 css에서 정의</li>
                                 <li>상태별(체크해제된 상태) 4번째 파라미터(false) 분기처리</li>
                                 <li>팝업의 기본사이즈는 400px,세번째 인자로 팝업사이즈 조절가능</li>
-                                <li><em class="tag tag02">테스트중</em> 포커스회귀를 위해 클릭시 data-focus에 팝업의 아이디를 부여하고 닫을때 <em>data-focus의 아이디로 매칭</em>하여 포커스처리<br>해당페이지에서 같은 레이어를 팝업하는 경우좀더 테스트가 필요함</li>
-                                <li><em class="tag tag02">테스트중</em> 시간연장 처럼 수동적인 팝업은 테스트가 필요함</li>
+                                <li><em class="tag tag02"></em> 포커스회귀를 위해 클릭시 data-focus에 팝업의 아이디를 부여하고 닫을때 <em>data-focus의 아이디로 매칭</em>하여 포커스처리<br>해당페이지에서 같은 레이어를 팝업하는 경우좀더 테스트가 필요함</li>
+                                <li><em class="tag tag02"></em> 시간연장 처럼 수동적인 팝업은 테스트가 필요함</li>
                             </ul>
                             <div class="rendering guide-add-space">
                                 <h3>Screen Rendering</h3>
@@ -193,7 +193,7 @@
                                 <li>3개의 파라미터를 전달하며, 각각 $(this), 툴팁아이디, 고정높이값(auto scroll)</li>
                                 <li>클릭시 <em>.tooltip 노드안에 레이어영역 부분을 append / momove</em></li>
                                 <li>요소의 아래방향으로 툴팁되며, 좌우는 윈도우의 가운데를 기점으로 여백이 많은곳으로 노출</li>
-                                <li><em class="tag">작업중</em>기능상으로만 우선 적용되었으며, 디자인은 미반영상태</li>
+                                <li><em class="tag"></em>기능상으로만 우선 적용되었으며, 디자인은 미반영상태</li>
                             </ul>
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
@@ -372,7 +372,7 @@
                             <ul class="scr">
                                 <li>파라미터는 특정메세지 노출을 원할 경우에 사용</li>
                                 <li>파마미터는 필수값이 아니라서 undefined일 경우는 null(빈공백)으로 대체</li>
-                                <li><em class="tag">작업중</em> 임시적용된 부분으로 디자인 수급시 수정예정</li>
+                                <li><em class="tag"></em> 임시적용된 부분으로 디자인 수급시 수정예정</li>
                             </ul>
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
@@ -386,7 +386,7 @@
                                 <pre class="brush: xhtml; gutter: false; toolbar:false">
                                 <div class="dimmed">
                                     <div class="loader-wrap">
-                                        <div class="loader"></div>	
+                                        &lt;div class="loader">&lt;/div>	
                                         <p class="load-msg">로딩중</p>
                                     </div>
                                 </div>
@@ -428,6 +428,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- modal test -->
     <div class="lyr-popup-wrap" id="tempPop">

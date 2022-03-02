@@ -25,14 +25,20 @@
                 <h3 class="tit"></h3>
                 <section>
                     <article>
-                        <h2>사용자 만족도 향상</h2>
                         <section>
-                            <p class="scr">이미지를 게시할 때 최고의 사용자 만족도를 이끌어 낼 수 있는 방법모색</p>
                             <ul class="scr">
-                                <li>웹서비스에 불필요한 메타정보를 제거(<a href="optimization_image.html">이미지 최적화 부분 참조</a>)</li>
-                                <li>색상정보가 많은 이미지는 png, jpg로 서비스 하며, 기본적으로 압축을 사용하지 않는다.</li>
+                                <li>웹서비스에 불필요한 메타정보를 제거</li>
+                                <li>색상정보가 많은 경우는 svg보다는 jpg, png24를 사용하며, <strike>압축을 사용하지 않는다</strike></li>
+                                <li>포토샵툴 사용시 <em>웹형식 저장으로 메타정보를 삭제(opt. metadata:none)</em></li>
+                                <li>메타정보 확인 <a href="http://metapicz.com/#landing" target="_blank">http://metapicz.com/#landing</a></li>
                                 <li>svg는 태그로 사용보다는 url encoder배경이미지로 사용 <a href="../url-encoder/index.html" target="_blank">url변환</a></li>
                             </ul>
+                            <blockquote>JPG 이미지포맷에는 촬영기기의 모델명, 촬영일시, 노출 감도, 편집 프로그램 정보 등 그림데이타 이외의 여러 정보가 남겨집니다.<br>PNG 이미지포맷 역시 마지막 수정시간, 색상히스토그램, ICC 칼라 프로필, 감마값 등 그림데이타 이외의 여러 정보가 남겨집니다.<br>이러한 데이타를 흔히 '이미지 메타데이타(Metadata)'라고 부릅니다. 사진편집작업을 할때엔 이러한 정보가 유용하겠지만 웹서비스
+                                UI에서 사용되는 이미지 파일은 이러한 정보를 필요로 하지 않습니다. 다시말해 불필요한 데이타인 셈이지요.<br>통상 20KB 정도의 용량을 차지하는 이들 메타데이타를 제거하면 이미지파일 용량이 줄어들어 웹서비스 로딩 속도가 향상될 것입니다. –NULI</blockquote>
+                            <div class="shot">
+                                <strong>툴(photoshop)에서 삭제</strong>
+                                <p><img src="../images/meta-del-tool02.jpg" alt="" style="border:1px solid #ccc; margin-top:5px; display:inline-block"></p>
+                            </div>
                         </section>
                     </article>
                 </section>
