@@ -425,6 +425,10 @@ body {
     display: block;
 }
 
+.preview-mode {
+    overflow: hidden;
+}
+
 .preview-mode .noti-box .box-cont {
     box-sizing: border-box;
     background-color: #fff;

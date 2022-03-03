@@ -113,11 +113,13 @@ var ADMIN = {
                                 $(this).find("td").each(function(i) {
                                     $(".frt_tbl  table").attr("border", "0");
                                 });
+                                $(this).parent().find(".delete").find("td:first").text("삭제");
+                                $(this).parent().find(".common").find("td:first").text("공통");
                             });
                             // indexing
-                            var fileTot = $(frt_tbl).find('tbody > tr').not(".link-pass, .del").length;
+                            var fileTot = $(frt_tbl).find('tbody > tr').not(".common, .delete").length;
                             var expect = $(frt_tbl).find('tbody > tr a').closest("td.ing").length;
-                            var fileWork = $(frt_tbl).find('tbody > tr').not(".link-pass, .del").find("a").closest("td").not(".ing").length;
+                            var fileWork = $(frt_tbl).find('tbody > tr').not(".common, .delete").find("a").closest("td").not(".ing").length;
                             var fileProgress = parseInt((fileWork / fileTot) * 100) + "%";
                             console.log("대상파일 >", fileTot, ", 완료 >", fileWork, ", 제외 >", expect);
 
@@ -154,7 +156,8 @@ var ADMIN = {
                         $('.link').removeClass('red');
                         $(this).parent('.link').addClass('red');
                     });
-                    frt_tbl_tr('.frt_tbl0' + realIndex);
+                    //frt_tbl_tr('.frt_tbl0' + realIndex);
+                    frt_tbl_tr("." + targetA + realIndex);
                 });
             }
         },
@@ -222,13 +225,18 @@ function keyEvent() {
         if (e.keyCode == 27) {
             if ($('body').hasClass('preview-mode')) {
                 $('body').removeClass('preview-mode');
+                $(".noti-box").remove();
             } else {
                 $('body').addClass('preview-mode');
+                $("body").append('<div class="noti-box"></div>');
+
+                $(".noti-box").load("/guide/html/convention_noti.html?" + Date.now(), function(responseTxt, statusTxt, xhr) {});
+
             }
         }
         if (e.keyCode == 49 || e.keyCode == 97) {
             window.location = '/guide/html/convention_ia.html';
         }
     });
-    $(".guide-gnb").append("<section><span class='on'>① <em>②</em> ③</span> <span>App</span></section>");
+    $(".guide-gnb").append("<section><span class='on'>①</span> <span>ESC</span></section>");
 }

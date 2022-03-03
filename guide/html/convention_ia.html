@@ -44,6 +44,7 @@
             color: #000;
         }
         
+        table tbody td:nth-child(7),
         table tbody td:nth-child(7) a {
             font-family: Consolas;
             letter-spacing: -0.5px;
@@ -232,6 +233,21 @@
             margin: 5px 2px;
             background-color: #fff;
         }
+        
+        .delete {
+            background-color: #686868 !important;
+        }
+        
+        .delete td,
+        .delete td a {
+            color: #fff !important;
+            border-right: 1px solid #686868;
+        }
+        
+        .common {
+            color: #000 !important;
+            background-color: #efefef !important;
+        }
     </style>
 </head>
 
@@ -261,7 +277,7 @@
                             </ul>
                             <div class="tab-inner area-tab-cont">
                                 <span style="float: left; margin-top: 15px"> 
-                                    수정파일 <span class="mod" style="vertical-align: middle; margin-top: -2px">MM-DD</span> 신규파일 <span class="new" style="vertical-align: middle; margin-top: -2px">MM-DD</span>
+                                    <span class="mod" style="vertical-align: middle; margin-top: -2px">수정</span>
                                 </span>
                                 <!--  -->
                                 <div class="frt_tbl01 frt_tbl tab-ele"></div>
@@ -301,22 +317,6 @@
                     </article>
                 </section>
             </div>
-        </div>
-    </div>
-    <div class="noti-box">
-        <div class="box-cont">
-            <h3>Pub. reporting</h3>
-            <ul>
-                <li>
-                    <p class="emp-box">
-                        <strike>$('a[href^="#"]').not(".able-anchor").click(function(e){e.preventDefault();});</strike>
-                    </p>
-                </li>
-                <li>input 타입에서 숫자(type="tel")와 이메일(type="email")을 적용</li>
-                <li>
-                    영역터치시 포커스의 범위를 위해 인풋요소는 되도록이면 for/id연결로 하고, 셀렉트는 title로 적용
-                </li>
-            </ul>
         </div>
     </div>
     <script src="../../js/jquery-3.3.1.min.js"></script>
