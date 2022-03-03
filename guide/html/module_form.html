@@ -45,7 +45,7 @@
                                 <li>checkbox, radio 디자인 적용은 <em>input의 type으로 결정</em></li>
                                 <li><em>2줄이상은 멀티클래스적용(.multi-line)</em> 정렬은 상단으로 변경</li>
                                 <li><em>레이블이 없이 단독사용시는 title속성 부여</em></li>
-                                <li>.chk-group으로 랩핑시 .chk의 기본 마진은 right:20px <em class="tag">임시수치로 디자인 적용후 삭제예정</em></li>
+                                <li><em class="tag">임시수치로 디자인 적용후 수정예정</em> .chk-group으로 랩핑시 .chk의 기본 마진은 right:20px</li>
                                 <li>텍스트노출없이 사용할 경우라도 빈 label(디자인이 적용되는 부분)태그는 필요</li>
                             </ul>
                             <div class="rendering">
@@ -73,6 +73,12 @@
                                         <label for="tempChkA05">해제불능</label>
                                     </div>
                                 </div>
+                                <div class="chk-group" style="margin-top:10px">
+                                    <div class="chk">
+                                        <input type="checkbox" id="tempChkA06">
+                                        <label for="tempChkA06">단독으로 체크박스가 있는 경우의 줄바꿈시<br>정렬은 디자인 정의후 작업예정</label>
+                                    </div>
+                                </div>
                                 <div class="exp">
                                     <h3>code pattern</h3>
                                     <pre class="brush: xhtml; gutter: false; toolbar:false;">
@@ -83,7 +89,7 @@
                                             </div>
                                             <div class="chk">
                                                 &lt;input type="checkbox" id="tempChkA02" checked&gt;
-                                                <label span for="tempChkA02"><spa>태그안의 기본(되도록 지양)</spa></label>
+                                                <label span for="tempChkA02"><span>태그안의 기본(되도록 지양)</span></label>
                                             </div>
                                             <div class="chk">
                                                 &lt;input type="checkbox" id="tempChkA03" checked&gt;
@@ -272,8 +278,8 @@
 
                                 <h4 class="stit">etcetera</h4>
                                 <div class="chk" data-chk-draw>
-                                    <input type="checkbox" id="tempChkA06">
-                                    <label for="tempChkA06">check drawing</label>
+                                    <input type="checkbox" id="tempChkZ01">
+                                    <label for="tempChkZ01">check drawing</label>
                                 </div>
 
                                 <div class="exp">
