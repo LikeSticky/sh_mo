@@ -1771,6 +1771,7 @@ select::-ms-expand {
     margin-top: 10px;
     color: red;
     font-size: 10em;
+    text-align: center;
 }
 
 .loader::before,
