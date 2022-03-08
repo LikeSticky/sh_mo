@@ -100,10 +100,11 @@ var ADMIN = {
                         var linkLen = $('table td.link');
                         $(linkLen).each(function() {
                             if ($(this).text().length > 1) {
-                                var getTag = $(this).wrapInner("<a href='#' class='complete' rel='external'></a>");
-                                var getLink = $(this).text();
-                                $(this).children("a").attr('href', getLink);
-                                $(this).closest("tr").css('background', '#fff');
+                                let getLink = $(this).text();
+                                $(this)
+                                    .wrapInner("<a href='#' class='complete' rel='external'></a>")
+                                    .children("a").attr('href', getLink)
+                                    .closest("tr").css('background', '#fff');
                             }
                         });
                         var frt_tbl_tr = function(frt_tbl) {
@@ -132,10 +133,10 @@ var ADMIN = {
                             $('a[rel~=external]').attr('target', '_blank');
                         };
 
-                        var targetTable = $(".frt_tbl");
-                        var linker = targetTable.find('table tr');
+                        let targetTable = $(".frt_tbl"),
+                            linker = targetTable.find('table tr');
                         linker.each(function() {
-                            var Td = $(this).find('td').eq(6),
+                            let Td = $(this).find('td.link'),
                                 inLinker = Td.find('a'),
                                 $url = inLinker.attr('href');
                             inLinker.off().on('click', function(e) {
@@ -156,7 +157,6 @@ var ADMIN = {
                         $('.link').removeClass('red');
                         $(this).parent('.link').addClass('red');
                     });
-                    //frt_tbl_tr('.frt_tbl0' + realIndex);
                     frt_tbl_tr("." + targetA + realIndex);
                 });
             }
@@ -200,7 +200,7 @@ $(function() {
         }
     });
 
-    $('.frame_close').off().on('click', function() {
+    $('.as-tab').off().on('click', '.frame_close', function() {
         if ($(this).closest(".mobile-frame").hasClass("on")) {
             $('.mobile-frame').css("right", -$('.mobile-frame').width() - 6);
             $('.mobile-frame').removeClass('on')
@@ -211,7 +211,6 @@ $(function() {
     })
 
 });
-
 
 function frameChange($url) {
     var thisFrame = $('#mFrame');
