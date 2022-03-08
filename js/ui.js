@@ -37,10 +37,12 @@ let SHS = {
             const speed = 200; // scroll speed
             function scrollFunction() {
                 if ($(this).scrollTop() > 500) {
-                    SHS.addActive(".page-top");
+                    console.log("A");
+                    SHS.active(".page-top", true);
                     // $('.page-top').fadeIn();
                 } else {
-                    SHS.removeActive(".page-top");
+                    console.log("B");
+                    SHS.active(".page-top", false);
                     // $('.page-top').fadeOut();
                 }
             }
@@ -98,12 +100,16 @@ let SHS = {
         },
 
         // active class
-        addActive: function(tarEle) { $(tarEle).addClass("active") },
-        removeActive: function(tarEle) { $(tarEle).removeClass("active") },
+        active: function(tarEle, state) {
+            let tar = document.querySelector(tarEle);
+            state == true ? tar.classList.add("active") : tar.classList.remove("active");
+        },
 
         // show/hide
-        visibleEle: function(tar) { $("." + tar).show("fast") },
-        hiddenEle: function(tar) { $("." + tar).hide("fast") },
+        visible: function(tarEle, state) {
+            let tar = document.querySelector("." + tarEle);
+            state == true ? tar.style.display = "block" : tar.style.display = "none"
+        },
 
         // content go
         skipJump: function() {
@@ -630,6 +636,9 @@ $(function() {
 
     // anchor move
     $('a[href="#"]').not(".able-anchor").click(function(e) { e.preventDefault(); });
+
+    //var testElement = document.getElementsByTagName('a');
+
 
     //layer focus 
     $('.layer-top').keydown(function(event) {
