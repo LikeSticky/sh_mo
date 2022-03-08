@@ -511,7 +511,6 @@
 }
 
 .chk input[type="checkbox"]:focus-visible+label:before {
-    border-radius: 2px;
     outline: auto -webkit-focus-ring-color;
     /* -webkit-box-shadow: 0 0 0 2px #000; */
 }
@@ -679,6 +678,12 @@
     padding: 7px 0;
     text-align: center;
     justify-content: center;
+}
+
+.by-solid .chk input[type="radio"]:focus-visible+label:before {
+    border-radius: 2px;
+    z-index: 1;
+    width: calc(100% - 1px);
 }
 
 .by-solid .chk label span {
