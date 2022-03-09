@@ -37,13 +37,9 @@ let SHS = {
             const speed = 200; // scroll speed
             function scrollFunction() {
                 if ($(this).scrollTop() > 500) {
-                    console.log("A");
                     SHS.active(".page-top", true);
-                    // $('.page-top').fadeIn();
                 } else {
-                    console.log("B");
                     SHS.active(".page-top", false);
-                    // $('.page-top').fadeOut();
                 }
             }
             if (!$(".page-top").length) {
