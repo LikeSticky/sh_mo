@@ -37,9 +37,11 @@ let SHS = {
             const speed = 200; // scroll speed
             function scrollFunction() {
                 if ($(this).scrollTop() > 500) {
-                    SHS.active(".page-top", true);
+                    SHS.addActive(".page-top");
+                    // $('.page-top').fadeIn();
                 } else {
-                    SHS.active(".page-top", false);
+                    SHS.removeActive(".page-top");
+                    // $('.page-top').fadeOut();
                 }
             }
             if (!$(".page-top").length) {
@@ -96,16 +98,12 @@ let SHS = {
         },
 
         // active class
-        active: function(tarEle, state) {
-            let tar = document.querySelector(tarEle);
-            state == true ? tar.classList.add("active") : tar.classList.remove("active");
-        },
+        addActive: function(tarEle) { $(tarEle).addClass("active") },
+        removeActive: function(tarEle) { $(tarEle).removeClass("active") },
 
         // show/hide
-        visible: function(tarEle, state) {
-            let tar = document.querySelector("." + tarEle);
-            state == true ? tar.style.display = "block" : tar.style.display = "none"
-        },
+        visibleEle: function(tar) { $("." + tar).show("fast") },
+        hiddenEle: function(tar) { $("." + tar).hide("fast") },
 
         // content go
         skipJump: function() {
@@ -129,6 +127,7 @@ let SHS = {
                     $tarId = "tableSeq" + $("table").index(this),
                     $findTit = $(this).closest("[data-role='table']").find("[data-role='table-subject']"),
                     $tblTit = $findTit.length ? "하는 " + $findTit.text() + " 입니다." : "";
+                    $tarTbl.find("caption").remove();
 
                 if ($(this).find("caption") == null || $(this).find("caption").text() == '') {
                     $tarTbl.prepend("<caption class='rep-caption' id=" + $tarId + "></caption>");
@@ -627,25 +626,21 @@ let SHS = {
         // })
     } //last
 
-$(function() {
+
+
+if (document.readyState !== 'loading') {
+    ready();
+    } else {
+    document.addEventListener('DOMContentLoaded', ready);
+}
+function ready(){
+    console.log("function ready");
     SHS.init();
 
     // anchor move
     $('a[href="#"]').not(".able-anchor").click(function(e) { e.preventDefault(); });
 
-    //var testElement = document.getElementsByTagName('a');
-
-
-    //layer focus 
-    $('.layer-top').keydown(function(event) {
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-
-        if (keycode == 9) {
-            $(this).closest('.layer').attr('tabindex', '0').focus();
-        }
-    });
-
-});
+}
 
 
 function TESTablePop() { // 운영포팅시 삭제. 함수호출시 자동레이어 팝업 포커스 테스트가능
