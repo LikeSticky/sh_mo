@@ -29,7 +29,6 @@ let SHS = {
             SHS.tab.init();
             SHS.forms();
 
-
             // page top
             window.onscroll = function() {
                 scrollFunction()
@@ -38,17 +37,18 @@ let SHS = {
             function scrollFunction() {
                 if ($(this).scrollTop() > 500) {
                     SHS.addActive(".page-top");
-                    // $('.page-top').fadeIn();
                 } else {
                     SHS.removeActive(".page-top");
-                    // $('.page-top').fadeOut();
                 }
             }
-            if (!$(".page-top").length) {
+            //if (!$(".page-top").length) {
+            let eleTop = document.getElementsByClassName('page-top');
+            if ((typeof(eleTop) != 'undefined') && (eleTop != null)) {
                 let topArea = '<div class="page-top">' +
                     '<button style="float:right;">top</button>' +
                     '</div>';
                 $("body").append(topArea);
+                //document.querySelector('body').appendChild(topArea);
             }
 
             $(".page-top button").click(function() { $('body, html').animate({ scrollTop: 0 }, speed) });
@@ -121,6 +121,7 @@ let SHS = {
 
         tblSummary: function() {
             // table caption setting    [summary rep.] www.w3.org/WAI/tutorials/tables/caption-summary/
+            //Array.form(document.querySelectorAll("[data-role='table'] table")).forEach((index) => {
             $("[data-role='table'] table").each(function() {
                 let tblHead = [],
                     $tarTbl = $(this),
@@ -428,7 +429,6 @@ let SHS = {
         },
 
 
-
         // breadcrumb
         breadcrumb: function() {
             $(".breadcrumbs ul > li > a").each(function(e) {
@@ -462,7 +462,6 @@ let SHS = {
                         $('.breadcrumbs ul > li .depth-area').hide();
                     }
                 });
-
             });
         },
 
@@ -564,7 +563,8 @@ let SHS = {
         // 	if(ie8Check) return;
         // 	$(this).find('.wrp').fadeOut(100)
         // })
-    } //last
+        //last
+    }
 
 
 
@@ -580,6 +580,7 @@ function ready(){
     // anchor move
     $('a[href="#"]').not(".able-anchor").click(function(e) { e.preventDefault(); });
 
+    
 }
 
 
