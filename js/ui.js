@@ -421,66 +421,6 @@ let SHS = {
             })
         },
 
-        // GNB
-        gnb: function() {
-            var delay = 200;
-            var $lnb = $(".gnb > ul > li");
-            var $anchor = $lnb.find(">a");
-
-            $anchor.on("mouseenter focusin", function() {
-                var $anchorLi = $(this).parent();
-                var $depth = $(this).next(".gnb-ext");
-                setTimeOutConst = setTimeout(function() {
-                    $lnb.removeClass("on");
-                    if ($depth.length) {
-                        $anchorLi.addClass("on")
-                    }
-                }, delay);
-            });
-
-            $(".gnb > ul > li > a").on("mouseout", function() {
-                clearTimeout(setTimeOutConst);
-                if ($lnb.hasClass("on") && depth_1 == false && depth_2 == false) {
-                    gnbMouseCheck();
-                }
-            });
-
-            $(".gnb > ul").on("mouseenter", function() {
-                depth_1 = true;
-                gnbCheck();
-            });
-            $(".gnb-ext").on("mouseenter", function() {
-                depth_2 = true;
-                gnbCheck();
-            });
-            $(".gnb > ul").on("mouseleave", function() {
-                depth_1 = false;
-                gnbCheck();
-            });
-            $(".gnb-ext").on("mouseleave", function() {
-                depth_2 = false;
-                gnbCheck();
-            });
-
-            // mouse leave.enter flag
-            depth_1 = false;
-            depth_2 = false;
-
-            // mopuseleave add opt.
-            function gnbMouseCheck() {
-                if (depth_1 == false && depth_2 == false) {
-                    $(".gnb > ul > li").removeClass("on")
-                }
-            }
-
-            function gnbCheck() {
-                setTimeout(function() {
-                    gnbMouseCheck();
-                }, 400);
-            }
-
-        },
-
 
         // ajax after anchor able
         anchorAble: function() {
