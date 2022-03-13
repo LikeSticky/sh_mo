@@ -25,22 +25,36 @@
                 <h3 class="tit"></h3>
                 <section>
                     <article>
-                        <h2>module ... box</h2>
+                        <h2>section box</h2>
                         <section>
                             <ul class="scr">
-                                <li></li>
+                                <li>.sec, .in-sec은 되도록이면 section태그로 정의</li>
                             </ul>
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
-                                <div>...</div>
+                                <p style="padding: 10px 0">랩핑 임시영역 padding: 30px</p>
+                                <div style="padding:0 30px; border:1px solid #efefef;">
+                                    <section class="sec">
+                                        [sec] margin: 30px 0 / padding: 30px 0
+                                    </section>
+                                    <section class="sec">
+                                        [sec] margin: 30px 0 / padding: 30px 0
+                                    </section>
+                                    <div class="wide-sec">
+                                        <section class="in-sec no-mar">
+                                            [wide-sec]
+                                        </section>
+                                    </div>
+                                    <section class="sec">
+                                        [sec] margin: 30px 0 / padding: 30px 0
+                                    </section>
+                                </div>
                             </div>
                             <div class="exp">
                                 <h3>code pattern</h3>
                                 <pre class="brush: xhtml; gutter: false; toolbar:false">
-                            <div>
-                            ...
-                            </div>
-                            </pre>
+                                    <div>aa</div>>
+                                </pre>
                             </div>
                         </section>
                     </article>

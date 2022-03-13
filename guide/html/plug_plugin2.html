@@ -1,0 +1,270 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+    <style>
+        button {
+            border: none
+        }
+        
+        .societyGroupTab {
+            width: 400px;
+            box-sizing: border-box;
+            position: relative;
+            background: pink
+        }
+        
+        .societyGroupTab:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #e1e1e1;
+        }
+        
+        .societyGroupTab .swiper-slide {
+            padding: 0 11px;
+            width: auto;
+        }
+        
+        .societyGroupTab .swiper-slide:first-child {
+            padding-left: 0;
+        }
+        
+        .societyGroupTab .swiper-slide:last-child {
+            padding-right: 0;
+        }
+        
+        .societyGroupTab .swiper-slide a {
+            display: block;
+        }
+        
+        .societyGroupTab .swiper-slide a:hover .societyGroupTab__text {
+            font-weight: bold;
+        }
+        
+        .societyGroupTab__text {
+            padding: 15px 10px 12px 10px;
+            box-sizing: border-box;
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 15px;
+            line-height: 1;
+            color: #333;
+        }
+        
+        .on .societyGroupTab__text {
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .on .societyGroupTab__text:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: #000;
+        }
+        
+        .societyGroupTab__next,
+        .societyGroupTab__prev {
+            position: absolute;
+            top: 0;
+            width: 30px;
+            height: calc(100% - 1px);
+            z-index: 100;
+            font-size: 0;
+        }
+        
+        .societyGroupTab__next.swiper-button-disabled,
+        .societyGroupTab__prev.swiper-button-disabled {
+            display: none;
+        }
+        
+        .societyGroupTab__next {
+            right: 0;
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, white 100%);
+        }
+        
+        .societyGroupTab__prev {
+            left: 0;
+            background: -webkit-linear-gradient(left, white 0%, rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <section>
+                            <ul class="scr">
+                                <li></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <!-- Swiper -->
+                                <div class="swiper-container societyGroupTab">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group A</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group B</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group C</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group D</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group E</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group F</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group 7</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group 8</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group 9</span></a></div>
+                                        <div class="swiper-slide"><a href="javascript:void(0);"><span class="societyGroupTab__text">Group 10</span></a></div>
+                                    </div>
+                                    <button class="societyGroupTab__next">next</button>
+                                    <button class="societyGroupTab__prev">prev</button>
+                                </div>
+
+                                <div class="swiper-container-2">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">뉴스</div>
+                                        <div class="swiper-slide">내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이
+                                            긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br></div>
+                                        <div class="swiper-slide">스포츠</div>
+                                        <div class="swiper-slide">웹툰뿜</div>
+                                        <div class="swiper-slide">내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이
+                                            긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br></div>
+                                        <div class="swiper-slide">쇼핑 내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br></div>
+                                        <div class="swiper-slide">동영상</div>
+                                        <div class="swiper-slide">리빙푸드</div>
+                                        <div class="swiper-slide">내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이
+                                            긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br></div>
+                                        <div class="swiper-slide">추가메뉴-1</div>
+                                        <div class="swiper-slide">내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이
+                                            긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br></div>
+                                        <div class="swiper-slide">추가메뉴-3</div>
+                                        <div class="swiper-slide">내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이
+                                            긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분
+                                            <br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br>내용이 긴부분<br></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+							</pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <script src="../../js/jquery-3.3.1.min.js"></script>
+        <script src="../../js/ui.js"></script>
+        <!-- <script src="../../js/swiper.js"></script> -->
+        <script src="../../js/swiper.3.3.1.js"></script>
+        <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+        <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+        <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+        <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+        <script>
+            var swiper = new Swiper('.societyGroupTab', {
+                slidesPerView: 'auto',
+                preventClicks: true,
+                preventClicksPropagation: false,
+                observer: true,
+                observeParents: true,
+                nextButton: '.societyGroupTab__next',
+                prevButton: '.societyGroupTab__prev'
+            });
+            var $lankTitle = $('.societyGroupTab .swiper-slide a');
+            $lankTitle.click(function() {
+                var target = $(this).parent();
+                $lankTitle.parent().removeClass('on')
+                target.addClass('on');
+                muCenter(target);
+            })
+
+            // 클릭요소 중앙정렬
+            function muCenter(target) {
+                var snbwrap = $('.societyGroupTab .swiper-wrapper');
+                var targetPos = target.position();
+                var boxWidth = $('.societyGroupTab').width();
+                var wrapWidth = 0;
+                snbwrap.find('.swiper-slide').each(function() {
+                    wrapWidth += $(this).outerWidth();
+                })
+
+                var selectTargetPos = targetPos.left + target.outerWidth() / 2;
+                var pos;
+                if (selectTargetPos <= boxWidth / 2) {
+                    pos = 0
+                    $('.societyGroupTab__prev').addClass('swiper-button-disabled'); // 사이드 그라데이션
+                } else if (wrapWidth - selectTargetPos <= boxWidth / 2) {
+                    pos = wrapWidth - boxWidth;
+                    $('.societyGroupTab__next').addClass('swiper-button-disabled'); // 사이드 그라데이션
+                } else {
+                    pos = targetPos.left - (boxWidth / 2) + (target.outerWidth() / 2);
+                    $('.societyGroupTab__prev, .societyGroupTab__next').removeClass('swiper-button-disabled'); // 사이드 그라데이션
+                }
+
+                if (wrapWidth > boxWidth) {
+                    setTimeout(function() {
+                        snbwrap.css({
+                            "transform": "translate3d(" + (pos * -1) + "px, 0, 0)",
+                            "transition-duration": "500ms"
+                        })
+                    }, 200);
+                }
+            }
+        </script>
+
+        <script>
+            SyntaxHighlighter.all();
+            $(function() {
+                navMenu(4, 0);
+            });
+        </script>
+        <link href="../css/guide.css" rel="stylesheet">
+        <script src="../js/guide.js"></script>
+</body>
+
+</html>
