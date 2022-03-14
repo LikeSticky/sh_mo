@@ -57,17 +57,12 @@
                                     </div>
                                 </div>
 
-                                <div data-role="tab" data-show="3" class="tabs01">
+                                <div data-role="tab" data-show="0" class="tabs01" style="position: relative;">
                                     <ul class="area-tab-mnu">
                                         <li><a href="#">연혁</a></li>
                                         <li><a href="#"><span>인사말</span></a></li>
                                         <li><a href="#"><i>가치경영체계</i></a></li>
-                                        <li><a href="#">Organization chart</a></li>
-                                        <li><a href="#">신한금융그룹</a></li>
-                                        <li><a href="#">연혁</a></li>
-                                        <li><a href="#"><span>인사말</span></a></li>
-                                        <li><a href="#"><i>가치경영체계</i></a></li>
-                                        <li><a href="#">Organization chart</a></li>
+                                        <li><a href="#">조직도<br>Organization chart</a></li>
                                         <li><a href="#">신한금융그룹</a></li>
                                     </ul>
                                     <div class="area-tab-cont">
@@ -77,6 +72,8 @@
                                         <div class="tab-ele"><span>네번째 영역</span></div>
                                         <div class="tab-ele">다섯번째 영역</div>
                                     </div>
+                                    <!-- test.... -->
+                                    <div class="selector"></div>
                                 </div>
                                 <!-- 
                                     다른방식의 탭메뉴 형태
@@ -150,10 +147,52 @@
     <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
     <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
 
+    <style>
+        .selector {
+            height: 10px;
+            display: inline-block;
+            position: absolute;
+            left: 0px;
+            top: 52px;
+            z-index: 1;
+            border-radius: 50px;
+            transition-duration: 0.3s;
+            transition-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            background: #0068f8;
+            background-color: #0068f8;
+            width: 100px;
+            z-index: 10;
+        }
+    </style>
     <script>
         SyntaxHighlighter.all();
         $(function() {
             navMenu(2, 3);
+
+            var tabs = $('.area-tab-mnu');
+            var selector = $('.area-tab-mnu').find('a').length;
+            var activeItem = tabs.find(".active");
+            console.log(activeItem);
+            var activeWidth = activeItem.innerWidth();
+            $(".selector").css({
+                "left": activeItem.position.left + "px",
+                "width": activeWidth + "px"
+            });
+
+
+            $('.area-tab-mnu').on("click", "a", function(e) {
+                e.preventDefault();
+                $('.area-tab-mnu li').removeClass("active");
+                $(this).parent("li").addClass('active');
+                var activeWidth = $(this).innerWidth();
+                var itemPos = $(this).parent("li").position();
+                console.log($(this).parent("li.active").left);
+                $(".selector").css({
+                    "left": itemPos.left + "px",
+                    "width": activeWidth + "px"
+                });
+            });
+
         });
     </script>
     <link href="../css/guide.css" rel="stylesheet">
