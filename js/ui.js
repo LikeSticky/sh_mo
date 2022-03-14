@@ -125,28 +125,30 @@ let SHS = {
         $("[data-role='table'] table").each(function() {
             let tblHead = [],
                 $tarTbl = $(this),
-                $tarId = "tableSeq" + $("table").index(this),
-                $findTit = $(this).closest("[data-role='table']").find("[data-role='table-subject']"),
-                $tblTit = $findTit.length ? "하는 " + $findTit.text() + " 입니다." : "";
-            $tarTbl.find("caption").remove();
+                tblId = "tableSeq" + $("table").index(this),
+                tblSubject = $(this).closest("[data-role='table']").find("[data-role='table-subject']"),
+                tblTit = tblSubject.length ? "하는 " + tblSubject.text() + " 입니다." : "",
+                tblCaption = $(this).find("caption");
 
-            if ($(this).find("caption") == null || $(this).find("caption").text() == '') {
-                $tarTbl.prepend("<caption class='rep-caption' id=" + $tarId + "></caption>");
+            if (tblCaption == null || tblCaption.text() == '' || !(tblCaption.hasClass('fixed'))) {
+                $tarTbl.find("caption").not("fixed").remove();
+                $tarTbl.prepend("<caption class='rep-caption' id=" + tblId + "></caption>");
+
                 $(this).find("th").each(function(thIdx) {
                     var $tarTblPara = $tarTbl.find("caption");
                     if (thIdx < 6) {
                         tblHead[thIdx] = $(this).html().replace(/&nbsp;|<br>/gi, " ");
-                        $tarTblPara.text(tblHead + ' 정보를 제공' + $tblTit);
+                        $tarTblPara.text(tblHead + ' 정보를 제공' + tblTit);
                     } else {
-                        $tarTblPara.text(tblHead + ' 등의 정보를 제공' + $tblTit);
+                        $tarTblPara.text(tblHead + ' 등의 정보를 제공' + tblTit);
                     }
                 });
             } else {
                 $tarTbl.find("caption")
                     .addClass("rep-caption")
-                    .attr("id", $tarId);
+                    .attr("id", tblId);
             }
-            $tarTbl.attr("aria-describedby", $tarId);
+            $tarTbl.attr("aria-describedby", tblId);
             return;
         });
     },
