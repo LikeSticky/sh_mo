@@ -172,7 +172,7 @@ body {
 }
 
 .guide .guide-nav li.active>a {
-    color: #41c6db;
+    color: #ff7703;
 }
 
 .guide .guide-nav li.on>a {
@@ -200,7 +200,7 @@ body {
 
 .guide .guide-nav li ol li.inner_on a {
     font-weight: bold;
-    color: #00ebff;
+    color: #de690a;
     background-color: transparent;
 }
 
