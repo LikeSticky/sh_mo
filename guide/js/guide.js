@@ -31,22 +31,21 @@ var ADMIN = {
             } else {
                 $(".guide-contents .tit").text(ulTxt);
             }
-            /* $(".guide .guide-contents .tit").hide(); */
         },
 
         gnb: function() {
             $(".guide-nav ul").each(function() {
                 $(".guide-nav ul > li ol").hide();
                 $(this).find(" > li").mouseenter(function() {
-                    var depthSt = $(this);
-                    var depthNd = depthSt.find("ol");
-                    //$(".guide-nav li ol").hide().closest("li").removeClass("active");
-                    depthSt.addClass("on");
+                    let depthSt = $(this);
+                    let depthNd = depthSt.find("ol");
+                    if (!depthSt.hasClass("active")) {
+                        depthSt.addClass("on");
+                    }
                     depthNd.slideDown(100).addClass("active");
-                });
-                $(this).find(" > li").mouseleave(function() {
-                    var depthSt = $(this);
-                    var depthNd = depthSt.find("ol");
+                }).mouseleave(function() {
+                    let depthSt = $(this);
+                    let depthNd = depthSt.find("ol");
                     depthSt.removeClass("on");
                     depthNd.hide().removeClass("active");
                 });
@@ -217,25 +216,21 @@ function frameChange($url) {
     thisFrame.attr('src', $url);
 }
 
-
-
 function keyEvent() {
     $(document).keydown(function(e) {
-        if (e.keyCode == 27) {
+        if (e.keyCode == 27) { // escacpe
             if ($('body').hasClass('preview-mode')) {
                 $('body').removeClass('preview-mode');
                 $(".noti-box").remove();
             } else {
                 $('body').addClass('preview-mode');
                 $("body").append('<div class="noti-box"></div>');
-
                 $(".noti-box").load("/guide/html/convention_noti.html?" + Date.now(), function(responseTxt, statusTxt, xhr) {});
-
             }
         }
-        if (e.keyCode == 49 || e.keyCode == 97) {
+        if (e.keyCode == 49 || e.keyCode == 97) { // a, A
             window.location = '/guide/html/convention_ia.html';
         }
     });
-    $(".guide-gnb").append("<section><span class='on'>①</span> <span>ESC</span></section>");
+    $(".guide-gnb").append("<section><span class='on' title='worklist'>①</span> <span title='Pub. reporting'>ESC</span></section>");
 }
