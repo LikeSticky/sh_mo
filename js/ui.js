@@ -582,8 +582,6 @@ function ready() {
 
     // anchor move
     $('a[href="#"]').not(".able-anchor").click(function(e) { e.preventDefault(); });
-
-
 }
 
 
