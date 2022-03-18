@@ -25,6 +25,7 @@ document.writeln('<li><a href="../html/module_menu.html">Menu</a></li>');
 document.writeln('<li><a href="../html/module_list.html">List</a></li>');
 document.writeln('<li><a href="../html/module_box.html">Box</a></li>');
 document.writeln('<li><a href="../html/module_etc.html">Etc.</a></li>');
+document.writeln('<li><a href="../html/module_icon.html" target="_blank">Icon</a></li>');
 document.writeln('</ol>');
 document.writeln('</li>');
 document.writeln('<li><a href="../html/accessibility.html">Accessibility</a></li>');

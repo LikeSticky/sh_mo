@@ -54,7 +54,7 @@
     --emp-black: #000;
     --emp-999: #999;
     --emp-aaa: #aaa;
-    --focus-dot: dotted 2px var(--color-black);
+    --focus-dot: dotted 2px var(--emp-black);
     --focus-ring: auto -webkit-focus-ring-color;
     --focus-shadow: -webkit-box-shadow: 0 0 0 2px #000;
     --shadow-multi: 0 4px 12px 4px rgba(226, 226, 226, 0.2), 0 1px 3px 0 rgba(133, 133, 133, 0.4);
@@ -451,6 +451,10 @@
     margin: 0 20px 0 0;
 }
 
+.chk-group .chk-aside {
+    margin-left: auto;
+}
+
 .chk-group .chk:last-child {
     margin-right: 0;
 }
@@ -518,7 +522,7 @@
 }
 
 .chk input[type="checkbox"]:focus-visible+label:before {
-    outline: var(--focus-dot);
+    outline: var(--focus-ring);
 }
 
 .chk input[type="checkbox"]:checked+label:before {

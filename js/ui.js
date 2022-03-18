@@ -293,7 +293,8 @@ let SHS = {
             uniqueId.find(".pop-area").attr("tabindex", "0").focus();
             uniqueId.find(".pop-tit").attr("tabindex", "0").focus();
 
-            uniqueId.append('<a href="#" class="pop-loop">포커스이동</a><div class="dimmed"></div>');
+            $("[data-role='wrap']").attr("aria-hidden", true);
+            uniqueId.append('<a href="#" class="pop-loop">포커스이동</a><div class="dimmed" aria-hidden="true"></div>');
             $(".pop-loop").on("focus", function() {
                 uniqueId.find(".pop-area").attr("tabindex", "0").fadeIn().focus();
             });
@@ -317,10 +318,12 @@ let SHS = {
                         .css("display", "none")
                         .find('a.pop-loop, div.dimmed').remove();
                     $('body').css({ 'overflow': '', 'height': '' });
+                    $("[data-role='wrap']").removeAttr("aria-hidden");
                 }
             }, 10);
             if (lyrLength.length == 1) {
                 $('body').css({ 'overflow': '', 'height': '' });
+                $("[data-role='wrap']").removeAttr("aria-hidden");
             }
             popIndex--; // z-index decrease
         }
