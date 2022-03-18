@@ -21,6 +21,7 @@ if (window.console === undefined) { console = { log: function() {} }; }
 
 // var SHS = SHS || {};
 let popIndex = 100; // z-index between layer popups
+let browSize = 17;
 let SHS = {
     init: function() {
         SHS.acc();

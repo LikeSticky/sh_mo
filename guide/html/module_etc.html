@@ -405,21 +405,30 @@
                             </div>
                         </section>
 
-                        <h2>module ... box</h2>
+                        <h2>systme popup</h2>
                         <section>
                             <ul class="scr">
-                                <li></li>
+                                <li>기본은 파라미터를 3개 넘김(url, w, h)</li>
+                                <li>SHS.popCenter.docuType은 문서의 중앙으로 팝업되면 4(top),5(left)번째 인자까지 넘기면 고정위치로 변경가능</li>
+                                <li>SHS.popCenter.scrType는 모니터의 중앙으로 팝업</li>
                             </ul>
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
-                                <div>...</div>
+                                <div>
+                                    <a href="#" onclick="SHS.popCenter.docuType('http://google.com', '500', '500');">문서의 중앙팝업</a>
+                                </div>
+                                <div>
+                                    <a href="#" onclick="SHS.popCenter.scrType('http://google.com', '500', '500');">모니터의 중앙팝업</a>
+                                </div>
                             </div>
                             <div class="exp">
                                 <h3>code pattern</h3>
-                                <pre class="brush: xhtml; gutter: false; toolbar:false">
-                                <div>
-                                ...
-                                </div>
+                                <pre class="brush: js; gutter: false; toolbar:false">
+                                //문서의 중앙팝업
+                                <a href="#" onclick="SHS.popCenter.docuType('http://google.com', '500', '500');">문서의 중앙팝업</a>
+                                
+                                //모니터의 중앙팝업
+                                <a href="#" onclick="SHS.popCenter.scrType('http://google.com', '500', '500');">모니터의 중앙팝업</a>
                                 </pre>
                             </div>
                         </section>
