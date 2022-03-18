@@ -14,6 +14,67 @@
     <link href="../../css/module.css" rel="stylesheet">
     <link href="../../css/contents.css" rel="stylesheet">
     <title>guide</title>
+    <style>
+        .tabs {
+            display: flex;
+            flex-wrap: wrap
+        }
+        
+        .tabs label {
+            width: 50%;
+            order: 1;
+            display: block;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+            background: #838487;
+            font-weight: 700;
+            transition: background ease .2s
+        }
+        
+        .tabs .tab {
+            order: 99;
+            flex-grow: 1;
+            width: 100%;
+            display: none;
+            background: #92B6D5
+        }
+        
+        .tabs input[type="radio"] {
+            display: none
+        }
+        
+        .tabs input[type="radio"]:checked+label {
+            background: #92B6D5
+        }
+        
+        .tabs input[type="radio"]:checked+label+.tab {
+            display: block
+        }
+        
+        .swiper-container {
+            width: 50%;
+            height: 300px
+        }
+        
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center
+        }
+    </style>
 </head>
 
 <body>
@@ -32,7 +93,56 @@
             </header>
 
             <div data-role="content" id="content">
-                content22222222
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet" />
+                <div class="tabs">
+                    <input type="radio" name="tabs" id="tabone" checked="checked" class="tabInput" value="1">
+                    <label for="tabone">Tab One</label>
+                    <div class="tab">
+                        <!-- Swiper -->
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal" id="swiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide swiper-slide-prev">Slide 4</div>
+                                <div class="swiper-slide swiper-slide-active">Slide 5</div>
+                                <div class="swiper-slide swiper-slide-next" style="width: 575px;">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                                <div class="swiper-slide">Slide 10</div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+
+                    <input type="radio" name="tabs" id="tabtwo" class="tabInput" value="2">
+                    <label for="tabtwo">Tab Two</label>
+                    <div class="tab">
+                        <!-- Swiper -->
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal" id="swiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide swiper-slide-active">Slide 1</div>
+                                <div class="swiper-slide swiper-slide-next">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                                <div class="swiper-slide">Slide 10</div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                            <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <footer data-role="footer" data-position="bottom">
@@ -47,9 +157,28 @@
 
     <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../js/ui.js"></script>
+    <script src="../../js/swiper.4.5.0.js"></script>
     <script>
         $(function() {
             // page script
+            new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+
+            let tabInputs = document.querySelectorAll('.tabInput');
+
+            tabInputs.forEach(function(input) {
+
+                input.addEventListener('change', function() {
+                    let id = input.value;
+                    let thisSwiper = document.getElementById('swiper' + id);
+                    thisSwiper.swiper.update();
+                });
+
+            });
         });
     </script>
 </body>
