@@ -171,10 +171,11 @@ $(function() {
             '<div class="device-btns">' +
             '<button type="button" data-mode="iPhone5">아이폰5</button>' +
             '<button type="button" data-mode="galaxyS5">갤럭시 S5</button>' +
-            '<button type="button" data-mode="iPhone6">아이폰6</button>' +
+            '<button type="button" data-mode="iPhone8">아이폰8</button>' +
+            '<button type="button" data-mode="iPhonePro12">iPhonePro</button>' +
             '<button type="button" data-mode="iPhoneXR">iPhoneXR</button>' +
             '</div>' +
-            '<strong class="info">iPhone6 : 375x667</strong>' +
+            '<strong class="info">iPhone8 : 375x667</strong>' +
             '</div>';
         $('.mobile-frame').append(deviceBtns);
     }
@@ -184,7 +185,8 @@ $(function() {
             devices = [
                 { 'mode': 'iPhone5', 'width': 320, 'height': 568 },
                 { 'mode': 'galaxyS5', 'width': 360, 'height': 640 },
-                { 'mode': 'iPhone6', 'width': 375, 'height': 667 },
+                { 'mode': 'iPhone8', 'width': 375, 'height': 667 },
+                { 'mode': 'iPhonePro12', 'width': 390, 'height': 844 },
                 { 'mode': 'iPhoneXR', 'width': 414, 'height': 896 },
             ];
         for (let i = 0; i < devices.length; i++) {

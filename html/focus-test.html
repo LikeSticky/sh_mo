@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="title" content="신한저축은행" />
+    <meta name="description" content="신한저축은행, 고객을 웃음짓게 하는 저축은행" />
+    <meta name="keywords" content="고객이 행복하고 따뜻한 금융세상을 만들겠습니다!" />
+    <link rel="favicon shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+
+    <link href="../../css/ini.min.css" rel="stylesheet" />
+    <link href="../../css/module.css" rel="stylesheet" />
+    <link href="../../css/contents.css" rel="stylesheet" />
+    <title>guide</title>
+    <style>
+        .pop_wrap {
+            display: none;
+            position: absolute;
+            top: 100px;
+            width: 90%;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <a href="#" class="btn_op">열기</a>
+        <a href="#" class="btn_op">열기1</a>
+        <a href="#" class="btn_op2">열기2</a>
+        <a href="#" class="btn_op3">열기3</a>
+    </div>
+
+    <div data-role="dim" class="dim"></div>
+
+    <div class="pop_wrap">
+        <div class="pop_box">
+            pop_wrap<br>
+            <a href="#">a</a>
+            <a href="#">b</a>
+            <a href="#">c</a>
+            <a href="#" class="btn_cl">닫기</a>
+            <a href="#">a</a>
+            <a href="#">b</a>
+            <a href="#">c</a>
+        </div>
+    </div>
+
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script>
+        $(function() {
+            $(".btn_op").on("click", function() {
+                $(".pop_wrap").show();
+                $(".pop_box").attr("tabindex", "0").focus();
+                $(".dim, .wrap").attr("aria-hidden", "true");
+                $(this).addClass("foc_op");
+
+                $(".btn_cl").click(function() {
+                    $(".pop_wrap").hide();
+                    $(".pop_box").removeAttr("tabindex");
+                    $(".dimn").removeAttr("aria-hidden");
+                    $(".foc_op").focus().removeClass("foc_op");
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>
