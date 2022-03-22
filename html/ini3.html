@@ -10,47 +10,37 @@
     <meta name="keywords" content="고객이 행복하고 따뜻한 금융세상을 만들겠습니다!">
     <link rel="favicon shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 
-    <link href="../../css/ini.min.css" rel="stylesheet">
-    <link href="../../css/module.css" rel="stylesheet">
-    <link href="../../css/contents.css" rel="stylesheet">
-    <link href="../../css/swiper.css" rel="stylesheet">
+    <link href="../css/ini.min.css" rel="stylesheet">
+    <link href="../css/module.css" rel="stylesheet">
+    <link href="../css/contents.css" rel="stylesheet">
+    <link href="../css/swiper.css" rel="stylesheet">
     <title>guide</title>
     <style>
         .container {
-            background: #666;
             margin: 0 auto;
-            height: 100%;
-            padding: 0 4em 0 2em;
+            padding: 0 4em 0 0;
             overflow: hidden;
-        }
-        
-        .slider-wrap {
-            overflow: hidden;
-            height: 100%;
-            width: 100%;
-            background: red;
         }
         
         .swiper-container {
             width: 100%;
-            height: 100%;
+            overflow: visible;
+            position: relative;
         }
         
         .swiper-slide {
             text-align: center;
             font-size: 18px;
             background: #fff;
-        }
-        
-        .swiper-slide {
             opacity: .25;
         }
         
-        .swiper-container {
-            overflow: visible;
+        .swiper-slide img {
+            width: 100%;
+            height: 400px;
         }
         
-        .swiper-slide-visible {
+        .swiper-slide-active {
             opacity: 1;
         }
     </style>
@@ -61,7 +51,7 @@
         <div id="acc-skip">
             <a href="#content">본문 바로가기</a>
         </div>
-        <div data-role="page">
+        <div data-role="page" style="padding:0 100px">
             <header data-role="header" data-position="top">
                 <div>
                     topper222222222
@@ -73,67 +63,77 @@
 
             <div data-role="content" id="content">
                 <div class="container">
-                    <!-- Slider main container -->
+                    <!-- slider container -->
                     <div class="swiper-container">
-                        <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">Slide 1</div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
-                            <div class="swiper-slide">Slide 6</div>
-                            <div class="swiper-slide">Slide 7</div>
-                            <div class="swiper-slide">Slide 8</div>
-                            <div class="swiper-slide">Slide 9</div>
-                            <div class="swiper-slide">Slide 10</div>
+                            <div class="swiper-slide"><img src="../guide/images/01.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="../guide/images/02.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="../guide/images/03.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="../guide/images/04.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="../guide/images/05.jpg" alt=""></div>
                         </div>
-
-                        <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
+                    <!-- //slider container -->
                 </div>
-
-                <footer data-role="footer" data-position="bottom">
-                    footer2222222222
-                </footer>
             </div>
+            <footer data-role="footer" data-position="bottom">
+                footer2222222222
+            </footer>
         </div>
 
         <div data-role="modal">
 
         </div>
 
-        <script src="../../js/jquery-3.3.1.min.js"></script>
-        <script src="../../js/ui.js"></script>
-        <script src="../../js/swiper.3.3.1.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="../js/ui.js"></script>
+        <script src="../js/swiper.js"></script>
         <script>
             $(function() {
-                // page script// Swiper: Slider
-                new Swiper('.swiper-container', {
-                    nextButton: '.swiper-button-next',
-                    prevButton: '.swiper-button-prev',
-                    slidesPerView: 5,
+                // page script
+                var swiper = new Swiper(".swiper-container", {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
                     centeredSlides: true,
-                    spaceBetween: 10,
                     loop: true,
-                    loopedSlides: 7,
-                    watchSlidesVisibility: true,
-                    breakpoints: {
-
-                        1028: {
-                            slidesPerView: 1,
-                            spaceBetween: 30,
+                    observer: true,
+                    observeParents: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                    },
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    on: {
+                        init: function() {
+                            console.log("3.call sequence // init");
+                            $(".swiper-pagination").attr("aria-hidden", "true");
                         },
+                        transitionStart: function() {
+                            console.log("1.call sequence // transitionStart");
+                        },
+                        transitionEnd: function() {
+                            console.log("2.call sequence // transitionEnd");
+                            $(".swiper-slide").attr("aria-hidden", "true");
+                            $(".swiper-slide-active").attr("aria-hidden", "false");
+                        }
+                    },
+                    a11y: {
+                        prevSlideMessage: '이전 슬라이드',
+                        nextSlideMessage: '다음 슬라이드',
+                        slideLabelMessage: '{{index}}번째 입니다.',
+                        paginationBulletMessage: '{{slidesLength}}개의 슬라이드 중 {{index}}번째 입니다.',
+                    },
+                    breakpoints: {
                         480: {
-                            slidesPerView: 1,
                             spaceBetween: 10,
                         }
-                    }
+                    },
                 });
-
-
             });
         </script>
     </div>
