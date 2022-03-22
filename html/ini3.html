@@ -18,30 +18,28 @@
     <style>
         .container {
             margin: 0 auto;
-            padding: 0 4em 0 0;
+            padding: 0 50px 0 0;
             overflow: hidden;
         }
         
         .swiper-container {
             width: 100%;
-            overflow: visible;
             position: relative;
         }
         
         .swiper-slide {
             text-align: center;
-            font-size: 18px;
             background: #fff;
-            opacity: .25;
+            margin-right: 20px;
+            opacity: 1;
+        }
+        
+        .swiper-slide:not(.swiper-slide-active) {
+            opacity: var(--opacity);
         }
         
         .swiper-slide img {
             width: 100%;
-            height: 400px;
-        }
-        
-        .swiper-slide-active {
-            opacity: 1;
         }
     </style>
 </head>
@@ -51,37 +49,30 @@
         <div id="acc-skip">
             <a href="#content">본문 바로가기</a>
         </div>
-        <div data-role="page" style="padding:0 100px">
+        <div data-role="page">
             <header data-role="header" data-position="top">
-                <div>
-                    topper222222222
-                </div>
-                <nav>
-                    nav222222222222222222
-                </nav>
+                <nav></nav>
             </header>
 
             <div data-role="content" id="content">
                 <div class="container">
                     <!-- slider container -->
-                    <div class="swiper-container">
+                    <div class="swiper-container swiper-type01">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="../guide/images/01.jpg" alt=""></div>
-                            <div class="swiper-slide"><img src="../guide/images/02.jpg" alt=""></div>
-                            <div class="swiper-slide"><img src="../guide/images/03.jpg" alt=""></div>
                             <div class="swiper-slide"><img src="../guide/images/04.jpg" alt=""></div>
-                            <div class="swiper-slide"><img src="../guide/images/05.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="../guide/images/04.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="../guide/images/04.jpg" alt=""></div>
                         </div>
+                        <!-- prev, next btn -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
+                        <!-- pagination bullet -->
                         <div class="swiper-pagination"></div>
                     </div>
                     <!-- //slider container -->
                 </div>
             </div>
-            <footer data-role="footer" data-position="bottom">
-                footer2222222222
-            </footer>
+            <footer data-role="footer" data-position="bottom"></footer>
         </div>
 
         <div data-role="modal">
@@ -94,19 +85,25 @@
         <script>
             $(function() {
                 // page script
-                var swiper = new Swiper(".swiper-container", {
+                const swiperType01 = new Swiper(".swiper-type01", {
                     slidesPerView: 1,
                     spaceBetween: 20,
                     centeredSlides: true,
                     loop: true,
+                    loopAdditionalSlides: 1,
                     observer: true,
                     observeParents: true,
+                    autoplay: {
+                        delay: 2000,
+                        disableOnInteraction: true
+                    },
                     pagination: {
                         el: ".swiper-pagination",
+                        /* type: "fraction", */
                     },
                     navigation: {
                         nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
+                        prevEl: ".swiper-button-prev"
                     },
                     on: {
                         init: function() {
@@ -125,15 +122,21 @@
                     a11y: {
                         prevSlideMessage: '이전 슬라이드',
                         nextSlideMessage: '다음 슬라이드',
-                        /* slideLabelMessage: '{{index}}번째 입니다.', */
-                        paginationBulletMessage: '{{slidesLength}}개의 슬라이드 중 {{index}}번째 입니다.',
+                        slideLabelMessage: '{{slidesLength}}개의 슬라이드 중 {{index}}번째 입니다.',
+                        /* paginationBulletMessage: '{{slidesLength}}개의 슬라이드 중 {{index}}번째 입니다.', */
                     },
                     breakpoints: {
                         480: {
-                            spaceBetween: 10,
+                            spaceBetween: 20,
                         }
                     },
                 });
+                // re autoplay
+                document.addEventListener('touchmove', () => {
+                    console.log('touchmove, startAutoplay')
+                    swiperType01.autoplay.start()
+                })
+
             });
         </script>
     </div>
