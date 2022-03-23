@@ -1184,13 +1184,13 @@ select::-ms-expand {
 }
 
 .ipt[data-state='success'] {
-    color: var(--emp-st);
-    border-color: var(--emp-st);
+    color: var(--emp-decrease);
+    border-color: var(--emp-decrease);
 }
 
 .ipt[data-state='fail'] {
-    color: var(--emp-nd);
-    border-color: var(--emp-nd);
+    color: var(--emp-increase);
+    border-color: var(--emp-increase);
 }
 
 
@@ -1247,6 +1247,42 @@ select::-ms-expand {
 
 .ipt-file .active {
     outline: var(--focus-ring);
+}
+
+
+/* input text del. */
+
+.ipt-valid,
+.ipt-unit {
+    position: relative;
+    display: block
+}
+
+.ipt-valid .ipt-del {
+    font-size: 0;
+    line-height: 0;
+    text-shadow: none;
+    color: transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -10px;
+    background-color: red;
+}
+
+.ipt-unit .unit {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 10px;
+}
+
+.ipt-unit .ipt {
+    padding-right: 30px;
 }
 
 

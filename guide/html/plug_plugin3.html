@@ -749,11 +749,11 @@
                 var tabIdx = $(this).parent().index();
                 swiper_2.slideTo(tabIdx + 1, 300);
                 e.preventDefault();
-                console.log(tabIdx);
             });
 
             var tabLen = $('.tabs > li').length;
 
+            /* 2016-05-13 수정 */
             var swiper_2 = new Swiper('.swiper-container-2', {
                 autoHeight: true,
                 slidesPerView: 1,
@@ -763,7 +763,7 @@
                 onInit: function(swiper) {
 
                 },
-                beforeSlideChangeStart: function(swiper) {
+                onSlideChangeStart: function(swiper) {
                     var idx = swiper.activeIndex - 1;
                     if (idx < 0) {
                         idx = tabLen - 1;

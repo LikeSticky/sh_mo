@@ -21,7 +21,7 @@ if (window.console === undefined) { console = { log: function() {} }; }
 
 // var SHS = SHS || {};
 let popIndex = 100; // z-index between layer popups
-let browSize = 17;
+let browSize = 17; // popup scrollbar size
 let SHS = {
     init: function() {
         SHS.acc();
@@ -42,18 +42,14 @@ let SHS = {
                 SHS.removeActive(".page-top");
             }
         }
-        //if (!$(".page-top").length) {
         let eleTop = document.getElementsByClassName('page-top');
         if ((typeof(eleTop) != 'undefined') && (eleTop != null)) {
             let topArea = '<div class="page-top">' +
                 '<button style="float:right;">top</button>' +
                 '</div>';
-            $("body").append(topArea);
-            //document.querySelector('body').appendChild(topArea);
+            document.getElementsByTagName('body')[0].innerHTML += topArea;
         }
-
         $(".page-top button").click(function() { $('body, html').animate({ scrollTop: 0 }, speed) });
-
 
         // time extension
         function timeCheck(sec_num) {
@@ -74,7 +70,6 @@ let SHS = {
                 });
             $("#digit").val(timeCheck(remaining));
             if (remaining == 60) {
-                //if (confirm("시간연장?") == true) {
                 if (confirm("시간연장?") == true) {
                     remaining = timeIni;
                 } else {
@@ -96,6 +91,21 @@ let SHS = {
             console.log("tickRefresh()");
             remaining = timeIni;
         });
+
+        // input value check
+        $(".ipt-valid").each(function(i) {
+            const $srchVal = $(this).find(".ipt-string"),
+                $searchDel = $(this).find(".ipt-del");
+            $srchVal.keyup(function() {
+                $searchDel.toggle(Boolean($(this).val()));
+            });
+            $searchDel.toggle(Boolean($srchVal.val()));
+            $searchDel.click(function() {
+                $srchVal.val('').focus();
+                $(this).hide();
+            });
+        });
+
     },
 
     // active class

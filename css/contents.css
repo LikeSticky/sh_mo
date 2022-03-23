@@ -184,35 +184,12 @@ strong {
 }
 
 
-/* comment */
+/* sepe. style */
 
-
-/* color */
-
-.emp-st {
-    color: var(--emp-st);
+.align-right {
+    text-align: right
 }
 
-.emp-nd {
-    color: var(--emp-nd);
-}
-
-.emp-rd {
-    color: var(--emp-rd);
-}
-
-.emp-black {
-    color: var(--emp-black);
-}
-
-.emp-white {
-    color: var(--emp-white);
-}
-
-.emp-gray-dark {
-    color: var(--emp-gray-dark);
-}
-
-.emp-gray-light {
-    color: var(--emp-gray-light);
+.align-right::-webkit-input-placeholder {
+    text-align: left;
 }
