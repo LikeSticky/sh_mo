@@ -20,8 +20,10 @@ if (window.console === undefined) { console = { log: function() {} }; }
 })(window, jQuery);
 
 // var SHS = SHS || {};
-let popIndex = 100; // z-index between layer popups
-let browSize = 17; // popup scrollbar size
+let popIndex = 100, // z-index between layer popups
+    browSize = 17, // popup scrollbar size
+    onlyDim = document.querySelector(".only-dimmed"),
+    body = document.body;
 let SHS = {
     init: function() {
         SHS.acc();
@@ -509,6 +511,24 @@ let SHS = {
     },
 
     // only dimmed layer ... class(dimmed) for dim on layer popup
+    /*     onlyDimmed: {
+            open: function() {
+                if (!onlyDim) {
+                    $("body")
+                        .append('<div class="only-dimmed"></div>')
+                        .css({ "overflow": "hidden", "height": "100%" });
+                    document.querySelector(".wrap").setAttribute("aria-hidden", "true");
+                }
+            },
+            close: function() {
+                .append('<div class="only-dimmed"></div>')
+                onlyDim.remove();
+                $("body").css("overflow", "");
+                document.querySelector(".wrap").removeAttribute("aria-hidden");
+            }
+        }, */
+
+
     onlyDimmed: {
         open: function() { // 
             if (!$(".only-dimmed").length) {
@@ -524,6 +544,7 @@ let SHS = {
             $("body").css("overflow", "");
         }
     },
+
 
 
     // loading...

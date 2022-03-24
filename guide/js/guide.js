@@ -115,10 +115,11 @@ var ADMIN = {
                                 });
                                 $(this).parent().find(".delete").find("td:first").text("삭제");
                                 $(this).parent().find(".common").find("td:first").text("공통");
+                                $(this).parent().find(".native").find("td:first").text("Native");
                             });
                             // indexing
-                            var fileTot = $(frt_tbl).find('tbody > tr').not(".common, .delete").length;
-                            var expect = $(frt_tbl).find('tbody > tr a').closest("td.ing").length;
+                            var fileTot = $(frt_tbl).find('tbody > tr').not(".common, .delete, .native").length;
+                            var expect = $(frt_tbl).find('tbody > tr a').closest("td.ing, td.native").length;
                             var fileWork = $(frt_tbl).find('tbody > tr').not(".common, .delete").find("a").closest("td").not(".ing").length;
                             var fileProgress = parseInt((fileWork / fileTot) * 100) + "%";
                             console.log("대상파일 >", fileTot, ", 완료 >", fileWork, ", 제외 >", expect);
@@ -130,6 +131,9 @@ var ADMIN = {
                             $(frt_tbl).find(">p").empty();
                             $(frt_tbl).prepend('<p style="text-align:right; padding:5px; float:right; margin-top:15px;">front indexing : working <em><strong>' + fileWork + '</strong></em> of total ' + fileTot + ' progress <em><strong>' + fileProgress + '</strong></em></p>');
                             $('a[rel~=external]').attr('target', '_blank');
+
+                            //$("table tbody td.native").text("Native");
+                            $("table tbody tr.native").css("background-color", "#efefef");
                         };
 
                         let targetTable = $(".frt_tbl"),
