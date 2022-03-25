@@ -287,7 +287,7 @@ let SHS = {
 
     // modal layer
     modalLayer: {
-        open: function(ele, unique, widNum, flag) {
+        open: function(ele, unique, widNum, flag, type) {
             popIndex++; // z-index increase
             let uniqueId = $('#' + unique),
                 checkState;
@@ -311,6 +311,14 @@ let SHS = {
                 uniqueId.find(".pop-area").attr("tabindex", "0").fadeIn().focus();
             });
             (widNum) ? $("#" + unique).find(".pop-area").width(widNum): $("#" + unique).find(".pop-area").css("width", "auto");
+
+            if (type == "sheet") {
+                uniqueId.addClass("btm-active");
+                setTimeout(() => {
+                    console.log("sheet...and...bottom");
+                    /* uniqueId.find(".pop-area").css("bottom", "0"); */
+                }, 10);
+            }
         },
 
         // layer popup close
@@ -318,20 +326,46 @@ let SHS = {
             let lyrLength = $(".lyr-popup-wrap:visible");
             setTimeOutConst = setTimeout(function() {
                 if (unique) {
-                    $("#" + unique)
-                        .css("display", "none")
-                        .find('a.pop-loop, div.dimmed').remove();
+                    if ($("#" + unique).hasClass("type-sheet")) {
+                        console.log("type-sheet");
+                        $("#" + unique)
+                            .removeClass("btm-active")
+                            .find('a.pop-loop, div.dimmed').remove();
+
+                        setTimeout(() => {
+                            $("#" + unique).css("display", "none");
+                        }, 250);
+
+                    } else {
+
+                        $("#" + unique)
+                            .css("display", "none")
+                            .find('a.pop-loop, div.dimmed').remove();
+                    }
                     //$(".layerActive[data-focus=" + unique + "]").focus()
                     $("[data-focus=" + unique + "]").focus()
                         .removeAttr("data-focus")
                         // .removeClass("layerActive");
                 } else {
-                    $(".lyr-popup-wrap")
-                        .css("display", "none")
-                        .find('a.pop-loop, div.dimmed').remove();
+
+                    if ($(".lyr-popup-wrap").hasClass("type-sheet")) {
+                        console.log("111");
+                        setTimeout(() => {
+                            console.log("type-sheet");
+                            $(".lyr-popup-wrap").removeClass("btm-active");
+                        }, 100);
+                        $(".lyr-popup-wrap")
+                            .find('a.pop-loop, div.dimmed').remove();
+                    } else {
+
+                        $(".lyr-popup-wrap")
+                            .css("display", "none")
+                            .find('a.pop-loop, div.dimmed').remove();
+                    }
                     $('body').css({ 'overflow': '', 'height': '' });
                     $("[data-role='wrap']").removeAttr("aria-hidden");
                 }
+
             }, 10);
             if (lyrLength.length == 1) {
                 $('body').css({ 'overflow': '', 'height': '' });

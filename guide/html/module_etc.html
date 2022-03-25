@@ -122,6 +122,7 @@
                                 <h3>Screen Rendering</h3>
                                 <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop', '800');">가로 800픽셀 고정팝업</a>
                                 <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop2');">기본팝업</a>
+                                <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop2', '', '', 'sheet');">바텀팝업</a>
                                 <a href="#" onclick="SHS.modalLayer.open($(this), 'tempPop4');">타이틀이없는 팝업</a>
                                 <span style="padding:0 10px"></span>
                                 <div class="chk">
@@ -573,7 +574,7 @@
 
     <!-- modal test -->
     <div class="lyr-popup-wrap" id="tempPop">
-        <div class="pop-area type-box">
+        <div class="pop-area">
             <div class="lyr-popup-title">
                 <strong class="pop-tit">타이틀영역</strong>
             </div>
@@ -595,8 +596,8 @@
             <a href="#" class="btn-lyr-close" onclick="SHS.modalLayer.close('tempPop');">닫기</a>
         </div>
     </div>
-    <div class="lyr-popup-wrap" id="tempPop2">
-        <div class="pop-area type-box">
+    <div class="lyr-popup-wrap type-sheet" id="tempPop2">
+        <div class="pop-area">
             <div class="lyr-popup-title">
                 <strong class="pop-tit">타이틀영역</strong>
             </div>
@@ -611,7 +612,7 @@
         </div>
     </div>
     <div class="lyr-popup-wrap" id="tempPop3">
-        <div class="pop-area type-box">
+        <div class="pop-area">
             <div class="lyr-popup-title">
                 <strong class="pop-tit">타이틀영역</strong>
             </div>
@@ -625,7 +626,7 @@
         </div>
     </div>
     <div class="lyr-popup-wrap" id="tempPop4">
-        <div class="pop-area type-box">
+        <div class="pop-area">
             <div class="lyr-popup-contents">
                 <div class="lyr-pop-sec">
 
@@ -640,7 +641,7 @@
         </div>
     </div>
     <div class="lyr-popup-wrap" id="autoPopup">
-        <div class="pop-area type-box">
+        <div class="pop-area">
             <div class="lyr-popup-contents">
                 <div class="lyr-pop-sec">
 

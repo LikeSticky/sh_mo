@@ -1397,6 +1397,24 @@ select::-ms-expand {
     z-index: 9999;
 }
 
+.lyr-popup-wrap.type-sheet {
+    align-items: flex-end;
+    max-height: 100vh;
+}
+
+.lyr-popup-wrap.type-sheet>.pop-area {
+    border-radius: 15px 15px 0 0;
+    min-width: 100%;
+    width: 100%;
+    bottom: -100vh;
+    transition-duration: var(--time-hover);
+}
+
+.lyr-popup-wrap.type-sheet.btm-active>.pop-area {
+    bottom: 0;
+    transition-duration: var(--time-hover);
+}
+
 .lyr-popup-wrap .btn-lyr-close,
 .lyr-wrap-abs .as-less-close {
     display: block;
