@@ -106,6 +106,13 @@ let SHS = {
                 $srchVal.val('').focus();
                 $(this).hide();
             });
+            $srchVal.focus(function() {
+                $searchDel.toggle(Boolean($(this).val()));
+            }).focusout(function() {
+                setTimeout(() => {
+                    !$searchDel.is(":focus") ? $searchDel.hide() : null;
+                }, 10);
+            });
         });
 
     },

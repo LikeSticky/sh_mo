@@ -316,6 +316,46 @@
                             <div class="rendering">
                                 <h3>Screen Rendering</h3>
                                 <div class="guide-space">
+                                    <style>
+                                        .ele-set {
+                                            display: flex;
+                                            align-items: center;
+                                            border: 1px solid #ced4da;
+                                            border-radius: 3px;
+                                            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                                            box-sizing: border-box;
+                                        }
+                                        
+                                        .ele-set input[type='text'],
+                                        .ele-set input[type='tel'],
+                                        .ele-set input[type='password'] {
+                                            border: 0;
+                                            margin: 0;
+                                            flex: 1;
+                                        }
+                                        
+                                        .ele-set input[type='text']:focus,
+                                        .ele-set input[type='text']:focus-visible,
+                                        .ele-set input[type='text']:hover {
+                                            outline: 0;
+                                            border: 0;
+                                            box-shadow: none;
+                                        }
+                                        
+                                        .ele-set .align-right {
+                                            text-align: right;
+                                            padding-right: 0;
+                                        }
+                                        
+                                        .ele-set .unit {
+                                            margin: 0 10px;
+                                        }
+                                    </style>
+                                    <div class="ele-set">
+                                        <input type="text" class="ipt ipt-string align-right">
+                                        <span class="unit">원</span>
+                                    </div>
+
                                     <div class="ipt-unit">
                                         <input type="text" class="ipt ipt-string align-right">
                                         <span class="unit">원</span>
@@ -425,6 +465,15 @@
         SyntaxHighlighter.all();
         $(function() {
             navMenu(2, 1);
+
+            $(".ele-set").each(function() {
+                let ele = $(this).closest(".ele-set");
+                $(this).find(".ipt").on("focus", function() {
+                    ele.addClass("on");
+                }).on("blur", function() {
+                    ele.removeClass("on");
+                })
+            });
         });
     </script>
     <link href="../css/guide.css" rel="stylesheet">
