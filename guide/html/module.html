@@ -1,0 +1,137 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>guide</title>
+    <link href="../../css/contents.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet">
+    <link href="../plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="guide">
+        <div class="guide-cont-wrap">
+            <div class="guide-gnb">
+                <h2>guide</h2>
+                <script src="../js/menu_inc.js"></script>
+            </div>
+            <div class="guide-contents">
+                <h3 class="tit"></h3>
+                <section>
+                    <article>
+                        <h2>empahsis</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>강조레벨은 클래스와 변수 선언</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div class="emp-st">.emp-st, --var-emp-st</div>
+                                <div class="emp-nd">.emp-nd, --var-emp-nd</div>
+                                <div class="emp-rd">.emp-rd, --var-emp-rd</div>
+                                <strong>폰트강조는  strong의 값을 수치로 적용</strong>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    <div></div>
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>list</h2>
+                        <section>
+                            <ul class="scr">
+                                <li>lists의 스타일 정의는 리스트형의 기본 마진만 포함하며, 타입은 user data로 정의</li>
+                                <li><em>data-list-type</em>="[dot|number|circle|cheracter]"</li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <ol class="lists dot" data-list-type="dot">
+                                    <li><button class="test">테스트1</button></li>
+                                    <li>과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    <li>신용등급 또는 개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.</li>
+                                    <li>연체 시 계약기한 만료 전 원리금 변제의무가 발생할 수 있습니다.</li>
+                                </ol>
+                                <ol class="lists number" data-list-type="number">
+                                    <li><button class="test">테스트2</button></li>
+                                    <li>1. 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    <li>2. 신용등급 또는 개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.</li>
+                                    <li>3. 연체 시 계약기한 만료 전 원리금 변제의무가 발생할 수 있습니다.</li>
+                                </ol>
+                                <ol class="lists" data-list-type="circle">
+                                    <li><button class="test">테스트3</button></li>
+                                    <li>① 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    <li>② 신용등급 또는 개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.</li>
+                                    <li>③ 연체 시 계약기한 만료 전 원리금 변제의무가 발생할 수 있습니다.</li>
+                                </ol>
+                                <ol class="lists" data-list-type="cheracter">
+                                    <li>가. 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    <li>나. 신용등급 또는 개인신용평점 하락으로 금융거래의 제약 또는 불이익이 발생할 수 있습니다.</li>
+                                    <li>다. 연체 시 계약기한 만료 전 원리금 변제의무가 발생할 수 있습니다.</li>
+                                </ol>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    <ol class="lists" data-list-type="dot">
+                                        <li>과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    </ol>
+                                    <ol class="lists" data-list-type="number">
+                                        <li>1. 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    </ol>
+                                    <ol class="lists" data-list-type="circle">
+                                        <li>① 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    </ol>
+                                    <ol class="lists" data-list-type="cheracter">
+                                        <li>가. 과도한 대출은 개인신용평점 하락의 원인이 될 수 있습니다.</li>
+                                    </ol>
+                                </pre>
+                            </div>
+                        </section>
+
+                        <h2>module ... list</h2>
+                        <section>
+                            <ul class="scr">
+                                <li></li>
+                            </ul>
+                            <div class="rendering">
+                                <h3>Screen Rendering</h3>
+                                <div>...</div>
+                            </div>
+                            <div class="exp">
+                                <h3>code pattern</h3>
+                                <pre class="brush: xhtml; gutter: false; toolbar:false">
+                                    <div></div>
+                                </pre>
+                            </div>
+                        </section>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/ui.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script src="../plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+        $(function() {
+            navMenu(2, 4);
+        });
+    </script>
+    <link href="../css/guide.css" rel="stylesheet">
+    <script src="../js/guide.js"></script>
+</body>
+
+</html>

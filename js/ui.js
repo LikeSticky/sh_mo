@@ -19,6 +19,12 @@ if (window.console === undefined) { console = { log: function() {} }; }
     console.log("loading namespaces before");
 })(window, jQuery);
 
+
+var selector,
+    selector = $("[data-list-type]").data("listType");
+(selector) ? selector = "." + selector: window.document;
+console.log(selector);
+
 // var SHS = SHS || {};
 let popIndex = 100, // z-index between layer popups
     browSize = 17, // popup scrollbar size
@@ -658,6 +664,10 @@ function ready() {
 
     // anchor move
     $('a[href="#"]').not(".able-anchor").click(function(e) { e.preventDefault(); });
+
+    $("button", selector).on("click", function() {
+        console.log("button click");
+    })
 }
 
 
